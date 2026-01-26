@@ -1,0 +1,710 @@
+[
+  {
+    "id": "copycraft",
+    "name": "CopyCraft",
+    "tagline": "AI copywriting assistant for ads & landing pages",
+    "category": "Writing",
+    "website": "https://copycraft.example",
+    "affiliateUrl": "https://copycraft.example",
+    "description": "CopyCraft is an advanced AI copywriting assistant designed to help marketers and content creators generate high-converting ads and landing pages in seconds. With features like tone control and A/B variant generation, it streamlines the creative process. Whether you're running Facebook ads, Google campaigns, or building landing pages, CopyCraft helps you craft compelling copy that converts visitors into customers.",
+    "featured": true,
+    "pricing": "Freemium, Pro $29/mo",
+    "freeTrial": true,
+    "logo": "/logos/copycraft.svg",
+    "features": [
+      "Ad copy generator",
+      "A/B variants",
+      "Tone control"
+    ],
+    "tags": [
+      "writing",
+      "ads",
+      "copy"
+    ],
+    "useCases": [
+      "Creating high-converting Facebook and Google ad copy",
+      "Writing persuasive landing page headlines and CTAs",
+      "Generating multiple A/B test variants for campaigns",
+      "Crafting email subject lines and marketing copy",
+      "Producing product descriptions for e-commerce stores"
+    ],
+    "pros": [
+      "Generates multiple copy variations instantly",
+      "Tone and style customization for brand consistency",
+      "Built-in A/B testing suggestions",
+      "Affordable pricing with generous free tier",
+      "Easy-to-use interface for non-writers"
+    ],
+    "cons": [
+      "May require editing for highly technical products",
+      "Limited customization in the free plan",
+      "Learning curve for advanced tone settings"
+    ]
+  },
+  {
+    "id": "writeflow",
+    "name": "WriteFlow",
+    "tagline": "Long-form AI writing with SEO outlines",
+    "category": "Writing",
+    "website": "https://writeflow.example",
+    "affiliateUrl": "https://writeflow.example",
+    "description": "WriteFlow empowers writers to create comprehensive long-form content with ease. By providing SEO-optimized outlines, content briefs, and a collaborative editor, it ensures your articles rank well and resonate with readers. Perfect for bloggers, content marketers, and SEO professionals who need to produce high-quality articles that drive organic traffic and engage audiences.",
+    "featured": true,
+    "pricing": "Pro $39/mo",
+    "freeTrial": true,
+    "logo": "/logos/writeflow.svg",
+    "features": [
+      "SEO outlines",
+      "Content briefs",
+      "Collaborative editor"
+    ],
+    "tags": [
+      "writing",
+      "seo",
+      "content"
+    ],
+    "useCases": [
+      "Writing SEO-optimized blog posts and articles",
+      "Creating comprehensive guides and tutorials",
+      "Developing content briefs for writing teams",
+      "Producing white papers and case studies",
+      "Building pillar content for content marketing strategies",
+      "Collaborating with team members on long-form content"
+    ],
+    "pros": [
+      "SEO-focused outlines based on top-ranking content",
+      "Real-time collaboration features for teams",
+      "Comprehensive content briefs save research time",
+      "Built-in keyword optimization suggestions",
+      "Structured workflow from outline to final draft"
+    ],
+    "cons": [
+      "Higher price point compared to basic writing tools",
+      "Requires understanding of SEO principles for best results",
+      "No free plan, only trial period"
+    ]
+  },
+  {
+    "id": "draftly",
+    "name": "Draftly",
+    "tagline": "Fast article drafts from a single prompt",
+    "category": "Writing",
+    "website": "https://draftly.example",
+    "affiliateUrl": "https://draftly.example",
+    "description": "Draftly turns simple prompts into full article drafts instantly, making it perfect for overcoming writer's block. It offers multiple rewrite modes and easy export options to Markdown for seamless integration into your workflow. Ideal for content creators who need to produce first drafts quickly and efficiently without sacrificing quality.",
+    "featured": true,
+    "pricing": "Pay-as-you-go",
+    "freeTrial": false,
+    "logo": "/logos/draftly.svg",
+    "features": [
+      "1-click draft",
+      "Rewrite modes",
+      "Export to Markdown"
+    ],
+    "tags": [
+      "writing",
+      "draft",
+      "export"
+    ],
+    "useCases": [
+      "Quickly generating first drafts for blog posts",
+      "Overcoming writer's block with instant content ideas",
+      "Creating multiple content variations for testing",
+      "Producing newsletter content on tight deadlines",
+      "Generating social media post expansions"
+    ],
+    "pros": [
+      "Extremely fast draft generation from simple prompts",
+      "Multiple rewrite modes for different tones and styles",
+      "Pay-as-you-go pricing with no monthly commitment",
+      "Markdown export for easy integration with CMS platforms",
+      "Great for beating writer's block and getting started"
+    ],
+    "cons": [
+      "No free trial to test before purchasing",
+      "Drafts often require significant editing and refinement",
+      "Pay-per-use can become expensive for high-volume users",
+      "Limited SEO optimization features"
+    ]
+  },
+  {
+    "id": "surferseo-lite",
+    "name": "SurferSEO Lite",
+    "tagline": "SEO-driven content editor with AI suggestions",
+    "category": "Writing",
+    "website": "https://surferseo-lite.example",
+    "affiliateUrl": "https://surferseo-lite.example",
+    "description": "SurferSEO Lite is a must-have tool for content optimization, offering real-time AI suggestions to improve your search rankings. It analyzes top-performing pages and provides actionable insights on keywords and content structure. By combining data-driven SEO analysis with AI-powered writing assistance, it helps content creators and marketers produce articles that rank higher in search results.",
+    "featured": true,
+    "pricing": "Freemium, Pro $49/mo",
+    "freeTrial": true,
+    "logo": "/logos/surferseo-lite.svg",
+    "features": [
+      "Keyword suggestions",
+      "Content score",
+      "SERP analyzer"
+    ],
+    "tags": [
+      "seo",
+      "writing",
+      "optimization"
+    ],
+    "useCases": [
+      "Optimizing existing blog posts for better rankings",
+      "Analyzing competitor content strategies",
+      "Creating SEO-optimized content from scratch",
+      "Identifying keyword gaps and opportunities",
+      "Improving content structure for search engines",
+      "Tracking content performance scores in real-time"
+    ],
+    "pros": [
+      "Data-driven insights from top-ranking pages",
+      "Real-time content scoring and optimization suggestions",
+      "Comprehensive SERP analysis tools",
+      "Free tier available for testing",
+      "Helps improve existing content performance",
+      "Easy-to-understand metrics and recommendations"
+    ],
+    "cons": [
+      "Pro plan is relatively expensive at $49/month",
+      "Can be overwhelming for SEO beginners",
+      "Focuses heavily on keyword density which isn't everything"
+    ]
+  },
+  {
+    "id": "midjourneyx",
+    "name": "MidJourneyX",
+    "tagline": "Creative image prompts for concept art",
+    "category": "Images",
+    "website": "https://midjourneyx.example",
+    "affiliateUrl": "https://midjourneyx.example",
+    "description": "Unlock your artistic potential with MidJourneyX, a powerful tool for generating creative image prompts and concept art. Ideal for designers and artists, it features high-detail renders and batch generation capabilities. Whether you're creating game assets, book illustrations, or marketing visuals, MidJourneyX delivers stunning, professional-quality images from simple text descriptions.",
+    "featured": true,
+    "pricing": "Subscription",
+    "freeTrial": false,
+    "logo": "/logos/midjourneyx.svg",
+    "features": [
+      "High-detail renders",
+      "Style presets",
+      "Batch generation"
+    ],
+    "tags": [
+      "images",
+      "art",
+      "generator"
+    ],
+    "useCases": [
+      "Creating concept art for games and films",
+      "Generating book cover illustrations and artwork",
+      "Producing marketing visuals and social media graphics",
+      "Developing character designs and environments",
+      "Creating mood boards and creative direction",
+      "Generating product mockups and visualizations"
+    ],
+    "pros": [
+      "Exceptional image quality with high-detail renders",
+      "Wide variety of artistic styles and presets",
+      "Batch generation saves time on multiple assets",
+      "Active community sharing prompts and techniques",
+      "Consistent results with style parameters",
+      "Great for professional creative work"
+    ],
+    "cons": [
+      "No free trial available to test before subscribing",
+      "Subscription can be expensive for casual users",
+      "Learning curve for crafting effective prompts",
+      "Generation times can be slow during peak hours"
+    ]
+  },
+  {
+    "id": "dalle3-proxy",
+    "name": "DALL·E Studio (example)",
+    "tagline": "Text-to-image for photoreal & illustrations",
+    "category": "Images",
+    "website": "https://dalle3-proxy.example",
+    "affiliateUrl": "https://dalle3-proxy.example",
+    "description": "DALL·E Studio brings text-to-image generation to the next level with support for photorealistic images and stylized illustrations. It includes advanced features like inpainting and high-resolution exports.",
+    "featured": true,
+    "pricing": "Credits-based",
+    "freeTrial": true,
+    "logo": "/logos/dalle3-proxy.svg",
+    "features": [
+      "Inpainting",
+      "Multiple aspect ratios",
+      "High-res export"
+    ],
+    "tags": [
+      "images",
+      "text-to-image",
+      "photoreal"
+    ]
+  },
+  {
+    "id": "stableart",
+    "name": "StableArt",
+    "tagline": "Open-source image diffusion with style control",
+    "category": "Images",
+    "website": "https://stableart.example",
+    "affiliateUrl": "https://stableart.example",
+    "description": "StableArt offers an open-source solution for image diffusion, giving you complete control over style and generation parameters. Deploy it locally or use custom models for unique artistic results.",
+    "pricing": "Free / Self-host",
+    "freeTrial": false,
+    "logo": "/logos/stableart.svg",
+    "features": [
+      "Local deployment",
+      "Custom models",
+      "Safe filters"
+    ],
+    "tags": [
+      "images",
+      "diffusion",
+      "open-source"
+    ]
+  },
+  {
+    "id": "leonardo-ai",
+    "name": "Leonardo AI (example)",
+    "tagline": "Creative workflow for game & concept artists",
+    "category": "Images",
+    "website": "https://leonardo-ai.example",
+    "affiliateUrl": "https://leonardo-ai.example",
+    "description": "Leonardo AI helps game developers and artists streamline their asset creation workflow. With features like batch style transfer and team workspaces, it's perfect for concepting and production.",
+    "pricing": "Pro $25/mo",
+    "freeTrial": true,
+    "logo": "/logos/leonardo-ai.svg",
+    "features": [
+      "Asset templates",
+      "Batch style transfer",
+      "Team workspaces"
+    ],
+    "tags": [
+      "images",
+      "game-dev",
+      "assets"
+    ]
+  },
+  {
+    "id": "runwayml",
+    "name": "RunwayML (example)",
+    "tagline": "AI tools for video creation and editing",
+    "category": "Video",
+    "website": "https://runwayml.example",
+    "affiliateUrl": "https://runwayml.example",
+    "description": "RunwayML is a comprehensive suite of AI tools for video creation and editing. From background removal to Gen-2 video generation, it empowers creators to produce professional visual content.",
+    "pricing": "Freemium, Pro $49/mo",
+    "freeTrial": true,
+    "logo": "/logos/runwayml.svg",
+    "features": [
+      "Background removal",
+      "Gen-2 video",
+      "Realtime editing"
+    ],
+    "tags": [
+      "video",
+      "editing",
+      "generator"
+    ]
+  },
+  {
+    "id": "pictory",
+    "name": "Pictory (example)",
+    "tagline": "Turn scripts into shareable videos",
+    "category": "Video",
+    "website": "https://pictory.example",
+    "affiliateUrl": "https://pictory.example",
+    "description": "Pictory automatically turns your scripts and blog posts into engaging, shareable videos. It features auto-captions and a vast stock library, making video marketing accessible to everyone.",
+    "pricing": "Subscription",
+    "freeTrial": true,
+    "logo": "/logos/pictory.svg",
+    "features": [
+      "Script-to-video",
+      "Auto captions",
+      "Stock library"
+    ],
+    "tags": [
+      "video",
+      "script",
+      "social"
+    ]
+  },
+  {
+    "id": "synthesia-lite",
+    "name": "Synthesia Lite",
+    "tagline": "AI avatars & text-to-video for training",
+    "category": "Video",
+    "website": "https://synthesia-lite.example",
+    "pricing": "Per-video pricing",
+    "freeTrial": false,
+    "logo": "/logos/synthesia-lite.svg",
+    "features": [
+      "AI presenters",
+      "Multi-language",
+      "Custom brand kit"
+    ],
+    "tags": [
+      "video",
+      "tts",
+      "training"
+    ]
+  },
+  {
+    "id": "elevenlabs-voice",
+    "name": "ElevenVoice",
+    "tagline": "Ultra‑natural text-to-speech & voice cloning",
+    "category": "Audio",
+    "website": "https://elevenvoice.example",
+    "pricing": "Credits-based",
+    "freeTrial": true,
+    "logo": "/logos/elevenvoice.svg",
+    "features": [
+      "High-quality TTS",
+      "Voice cloning",
+      "SSML support"
+    ],
+    "tags": [
+      "audio",
+      "tts",
+      "voice"
+    ]
+  },
+  {
+    "id": "murf",
+    "name": "Murf (example)",
+    "tagline": "Studio-grade voiceovers in minutes",
+    "category": "Audio",
+    "website": "https://murf.example",
+    "pricing": "Pro $19/mo",
+    "freeTrial": true,
+    "logo": "/logos/murf.svg",
+    "features": [
+      "Voice library",
+      "Studio editor",
+      "Royalty-free"
+    ],
+    "tags": [
+      "audio",
+      "voiceovers",
+      "studio"
+    ]
+  },
+  {
+    "id": "playht",
+    "name": "PlayHT (example)",
+    "tagline": "Realistic TTS for podcasts & narration",
+    "category": "Audio",
+    "website": "https://playht.example",
+    "pricing": "Subscription",
+    "freeTrial": true,
+    "logo": "/logos/playht.svg",
+    "features": [
+      "Multiple voices",
+      "SSML",
+      "MP3 export"
+    ],
+    "tags": [
+      "audio",
+      "tts",
+      "podcast"
+    ]
+  },
+  {
+    "id": "roamai",
+    "name": "RoamAI",
+    "tagline": "AI note assistant inside your workspace",
+    "category": "Productivity",
+    "website": "https://roamai.example",
+    "pricing": "Included in plans",
+    "freeTrial": false,
+    "logo": "/logos/roamai.svg",
+    "features": [
+      "Summaries",
+      "Task extraction",
+      "Query notes"
+    ],
+    "tags": [
+      "productivity",
+      "notes",
+      "summaries"
+    ]
+  },
+  {
+    "id": "otterai",
+    "name": "Otter.ai (example)",
+    "tagline": "Meeting transcription & searchable notes",
+    "category": "Productivity",
+    "website": "https://otterai.example",
+    "pricing": "Freemium, Pro $12/mo",
+    "freeTrial": true,
+    "logo": "/logos/otterai.svg",
+    "features": [
+      "Live transcription",
+      "Speaker detection",
+      "Export"
+    ],
+    "tags": [
+      "transcription",
+      "meetings",
+      "productivity"
+    ]
+  },
+  {
+    "id": "fireflies",
+    "name": "Fireflies (example)",
+    "tagline": "AI meeting assistant with highlights",
+    "category": "Productivity",
+    "website": "https://fireflies.example",
+    "pricing": "Subscription",
+    "freeTrial": true,
+    "logo": "/logos/fireflies.svg",
+    "features": [
+      "Meeting summaries",
+      "Searchable audio",
+      "CRM integration"
+    ],
+    "tags": [
+      "meetings",
+      "crm",
+      "notes"
+    ]
+  },
+  {
+    "id": "replitai",
+    "name": "ReplitAI (example)",
+    "tagline": "AI-powered coding assistant in the browser",
+    "category": "Code",
+    "website": "https://replitai.example",
+    "pricing": "Freemium",
+    "freeTrial": true,
+    "logo": "/logos/replitai.svg",
+    "features": [
+      "Code autocompletion",
+      "Live repls",
+      "Collab"
+    ],
+    "tags": [
+      "code",
+      "ide",
+      "autocompletion"
+    ]
+  },
+  {
+    "id": "gitassist",
+    "name": "GitAssist",
+    "tagline": "PR summaries & codebase search with AI",
+    "category": "Code",
+    "website": "https://gitassist.example",
+    "pricing": "Pro $29/mo",
+    "freeTrial": true,
+    "logo": "/logos/gitassist.svg",
+    "features": [
+      "PR summary",
+      "Semantic search",
+      "Refactor hints"
+    ],
+    "tags": [
+      "code",
+      "reviews",
+      "search"
+    ]
+  },
+  {
+    "id": "perplexity-ai",
+    "name": "Perplexity (example)",
+    "tagline": "AI research assistant and answer engine",
+    "category": "Research",
+    "website": "https://perplexity-ai.example",
+    "pricing": "Freemium",
+    "freeTrial": true,
+    "logo": "/logos/perplexity-ai.svg",
+    "features": [
+      "Source citations",
+      "Smart search",
+      "Follow-ups"
+    ],
+    "tags": [
+      "research",
+      "qa",
+      "sources"
+    ]
+  },
+  {
+    "id": "consensus",
+    "name": "ConsensusAI",
+    "tagline": "Evidence‑based answers from research papers",
+    "category": "Research",
+    "website": "https://consensusai.example",
+    "pricing": "Subscription",
+    "freeTrial": false,
+    "logo": "/logos/consensusai.svg",
+    "features": [
+      "Paper mining",
+      "Citation links",
+      "Summaries"
+    ],
+    "tags": [
+      "research",
+      "papers",
+      "summaries"
+    ]
+  },
+  {
+    "id": "marketmuse-lite",
+    "name": "MarketMuse Lite",
+    "tagline": "Content planning with AI topic modeling",
+    "category": "Marketing",
+    "website": "https://marketmuse-lite.example",
+    "pricing": "Pro $79/mo",
+    "freeTrial": true,
+    "logo": "/logos/marketmuse-lite.svg",
+    "features": [
+      "Topic clusters",
+      "Competitor gap analysis",
+      "Briefs"
+    ],
+    "tags": [
+      "marketing",
+      "seo",
+      "planning"
+    ]
+  },
+  {
+    "id": "phrasee",
+    "name": "Phrasee (example)",
+    "tagline": "AI subject lines & email copy optimizer",
+    "category": "Marketing",
+    "website": "https://phrasee.example",
+    "pricing": "Enterprise",
+    "freeTrial": false,
+    "logo": "/logos/phrasee.svg",
+    "features": [
+      "A/B subject lines",
+      "Tone tuning",
+      "Analytics"
+    ],
+    "tags": [
+      "email",
+      "marketing",
+      "copy"
+    ]
+  },
+  {
+    "id": "prompthub",
+    "name": "PromptHub",
+    "tagline": "Curated prompts and templates marketplace",
+    "category": "Utilities",
+    "website": "https://prompthub.example",
+    "pricing": "Freemium",
+    "freeTrial": true,
+    "logo": "/logos/prompthub.svg",
+    "features": [
+      "Prompt library",
+      "User ratings",
+      "Export formats"
+    ],
+    "tags": [
+      "prompts",
+      "marketplace",
+      "templates"
+    ]
+  },
+  {
+    "id": "promptbase-lite",
+    "name": "PromptBase Lite",
+    "tagline": "Quick prompt packs for common tasks",
+    "category": "Utilities",
+    "website": "https://promptbase-lite.example",
+    "pricing": "One-time packs",
+    "freeTrial": false,
+    "logo": "/logos/promptbase-lite.svg",
+    "features": [
+      "Topic packs",
+      "Copy-to-clipboard",
+      "Examples"
+    ],
+    "tags": [
+      "prompts",
+      "packs",
+      "utility"
+    ]
+  },
+  {
+    "id": "scribely",
+    "name": "Scribely",
+    "tagline": "Docs generation and versioned knowledge base",
+    "category": "Productivity",
+    "website": "https://scribely.example",
+    "pricing": "Subscription",
+    "freeTrial": true,
+    "logo": "/logos/scribely.svg",
+    "features": [
+      "Auto docs",
+      "Version control",
+      "Searchable KB"
+    ],
+    "tags": [
+      "docs",
+      "knowledge",
+      "kb"
+    ]
+  },
+  {
+    "id": "synthdocs",
+    "name": "SynthDocs",
+    "tagline": "Auto-generated API docs from code & comments",
+    "category": "Developer Tools",
+    "website": "https://synthdocs.example",
+    "pricing": "Freemium",
+    "freeTrial": true,
+    "logo": "/logos/synthdocs.svg",
+    "features": [
+      "Code scanning",
+      "Markdown export",
+      "Integrations"
+    ],
+    "tags": [
+      "developer",
+      "docs",
+      "api"
+    ]
+  },
+  {
+    "id": "imageopt",
+    "name": "ImageOpt AI",
+    "tagline": "Automatic image optimization and upscaling",
+    "category": "Images",
+    "website": "https://imageopt.example",
+    "pricing": "Credits-based",
+    "freeTrial": false,
+    "logo": "/logos/imageopt.svg",
+    "features": [
+      "Lossless upscaling",
+      "Compression presets",
+      "Batch API"
+    ],
+    "tags": [
+      "images",
+      "optimize",
+      "upscale"
+    ]
+  },
+  {
+    "id": "vidopt",
+    "name": "VidOpt",
+    "tagline": "Video compression & smart trimming with AI",
+    "category": "Video",
+    "website": "https://vidopt.example",
+    "pricing": "Subscription",
+    "freeTrial": true,
+    "logo": "/logos/vidopt.svg",
+    "features": [
+      "Auto trim",
+      "Quality-preserving compression",
+      "Presets for social"
+    ],
+    "tags": [
+      "video",
+      "compression",
+      "social"
+    ]
+  }
+]

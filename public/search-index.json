@@ -1,0 +1,411 @@
+{
+  "tools": [
+    {
+      "id": "copycraft",
+      "name": "CopyCraft",
+      "slug": "copycraft",
+      "tagline": "AI copywriting assistant for ads & landing pages",
+      "description": "AI copywriting assistant for ads & landing pages",
+      "category": "Writing",
+      "tags": [
+        "writing",
+        "ads",
+        "copy"
+      ],
+      "pricing": "Freemium, Pro $29/mo"
+    },
+    {
+      "id": "writeflow",
+      "name": "WriteFlow",
+      "slug": "writeflow",
+      "tagline": "Long-form AI writing with SEO outlines",
+      "description": "Long-form AI writing with SEO outlines",
+      "category": "Writing",
+      "tags": [
+        "writing",
+        "seo",
+        "content"
+      ],
+      "pricing": "Pro $39/mo"
+    },
+    {
+      "id": "draftly",
+      "name": "Draftly",
+      "slug": "draftly",
+      "tagline": "Fast article drafts from a single prompt",
+      "description": "Fast article drafts from a single prompt",
+      "category": "Writing",
+      "tags": [
+        "writing",
+        "draft",
+        "export"
+      ],
+      "pricing": "Pay-as-you-go"
+    },
+    {
+      "id": "surferseo-lite",
+      "name": "SurferSEO Lite",
+      "slug": "surferseo-lite",
+      "tagline": "SEO-driven content editor with AI suggestions",
+      "description": "SEO-driven content editor with AI suggestions",
+      "category": "Writing",
+      "tags": [
+        "seo",
+        "writing",
+        "optimization"
+      ],
+      "pricing": "Freemium, Pro $49/mo"
+    },
+    {
+      "id": "midjourneyx",
+      "name": "MidJourneyX",
+      "slug": "midjourneyx",
+      "tagline": "Creative image prompts for concept art",
+      "description": "Creative image prompts for concept art",
+      "category": "Images",
+      "tags": [
+        "images",
+        "art",
+        "generator"
+      ],
+      "pricing": "Subscription"
+    },
+    {
+      "id": "dalle3-proxy",
+      "name": "DALL·E Studio (example)",
+      "slug": "dalle3-proxy",
+      "tagline": "Text-to-image for photoreal & illustrations",
+      "description": "Text-to-image for photoreal & illustrations",
+      "category": "Images",
+      "tags": [
+        "images",
+        "text-to-image",
+        "photoreal"
+      ],
+      "pricing": "Credits-based"
+    },
+    {
+      "id": "stableart",
+      "name": "StableArt",
+      "slug": "stableart",
+      "tagline": "Open-source image diffusion with style control",
+      "description": "Open-source image diffusion with style control",
+      "category": "Images",
+      "tags": [
+        "images",
+        "diffusion",
+        "open-source"
+      ],
+      "pricing": "Free / Self-host"
+    },
+    {
+      "id": "leonardo-ai",
+      "name": "Leonardo AI (example)",
+      "slug": "leonardo-ai",
+      "tagline": "Creative workflow for game & concept artists",
+      "description": "Creative workflow for game & concept artists",
+      "category": "Images",
+      "tags": [
+        "images",
+        "game-dev",
+        "assets"
+      ],
+      "pricing": "Pro $25/mo"
+    },
+    {
+      "id": "runwayml",
+      "name": "RunwayML (example)",
+      "slug": "runwayml",
+      "tagline": "AI tools for video creation and editing",
+      "description": "AI tools for video creation and editing",
+      "category": "Video",
+      "tags": [
+        "video",
+        "editing",
+        "generator"
+      ],
+      "pricing": "Freemium, Pro $49/mo"
+    },
+    {
+      "id": "pictory",
+      "name": "Pictory (example)",
+      "slug": "pictory",
+      "tagline": "Turn scripts into shareable videos",
+      "description": "Turn scripts into shareable videos",
+      "category": "Video",
+      "tags": [
+        "video",
+        "script",
+        "social"
+      ],
+      "pricing": "Subscription"
+    },
+    {
+      "id": "synthesia-lite",
+      "name": "Synthesia Lite",
+      "slug": "synthesia-lite",
+      "tagline": "AI avatars & text-to-video for training",
+      "description": "AI avatars & text-to-video for training",
+      "category": "Video",
+      "tags": [
+        "video",
+        "tts",
+        "training"
+      ],
+      "pricing": "Per-video pricing"
+    },
+    {
+      "id": "elevenlabs-voice",
+      "name": "ElevenVoice",
+      "slug": "elevenlabs-voice",
+      "tagline": "Ultra‑natural text-to-speech & voice cloning",
+      "description": "Ultra‑natural text-to-speech & voice cloning",
+      "category": "Audio",
+      "tags": [
+        "audio",
+        "tts",
+        "voice"
+      ],
+      "pricing": "Credits-based"
+    },
+    {
+      "id": "murf",
+      "name": "Murf (example)",
+      "slug": "murf",
+      "tagline": "Studio-grade voiceovers in minutes",
+      "description": "Studio-grade voiceovers in minutes",
+      "category": "Audio",
+      "tags": [
+        "audio",
+        "voiceovers",
+        "studio"
+      ],
+      "pricing": "Pro $19/mo"
+    },
+    {
+      "id": "playht",
+      "name": "PlayHT (example)",
+      "slug": "playht",
+      "tagline": "Realistic TTS for podcasts & narration",
+      "description": "Realistic TTS for podcasts & narration",
+      "category": "Audio",
+      "tags": [
+        "audio",
+        "tts",
+        "podcast"
+      ],
+      "pricing": "Subscription"
+    },
+    {
+      "id": "roamai",
+      "name": "RoamAI",
+      "slug": "roamai",
+      "tagline": "AI note assistant inside your workspace",
+      "description": "AI note assistant inside your workspace",
+      "category": "Productivity",
+      "tags": [
+        "productivity",
+        "notes",
+        "summaries"
+      ],
+      "pricing": "Included in plans"
+    },
+    {
+      "id": "otterai",
+      "name": "Otter.ai (example)",
+      "slug": "otterai",
+      "tagline": "Meeting transcription & searchable notes",
+      "description": "Meeting transcription & searchable notes",
+      "category": "Productivity",
+      "tags": [
+        "transcription",
+        "meetings",
+        "productivity"
+      ],
+      "pricing": "Freemium, Pro $12/mo"
+    },
+    {
+      "id": "fireflies",
+      "name": "Fireflies (example)",
+      "slug": "fireflies",
+      "tagline": "AI meeting assistant with highlights",
+      "description": "AI meeting assistant with highlights",
+      "category": "Productivity",
+      "tags": [
+        "meetings",
+        "crm",
+        "notes"
+      ],
+      "pricing": "Subscription"
+    },
+    {
+      "id": "replitai",
+      "name": "ReplitAI (example)",
+      "slug": "replitai",
+      "tagline": "AI-powered coding assistant in the browser",
+      "description": "AI-powered coding assistant in the browser",
+      "category": "Code",
+      "tags": [
+        "code",
+        "ide",
+        "autocompletion"
+      ],
+      "pricing": "Freemium"
+    },
+    {
+      "id": "gitassist",
+      "name": "GitAssist",
+      "slug": "gitassist",
+      "tagline": "PR summaries & codebase search with AI",
+      "description": "PR summaries & codebase search with AI",
+      "category": "Code",
+      "tags": [
+        "code",
+        "reviews",
+        "search"
+      ],
+      "pricing": "Pro $29/mo"
+    },
+    {
+      "id": "perplexity-ai",
+      "name": "Perplexity (example)",
+      "slug": "perplexity-ai",
+      "tagline": "AI research assistant and answer engine",
+      "description": "AI research assistant and answer engine",
+      "category": "Research",
+      "tags": [
+        "research",
+        "qa",
+        "sources"
+      ],
+      "pricing": "Freemium"
+    },
+    {
+      "id": "consensus",
+      "name": "ConsensusAI",
+      "slug": "consensus",
+      "tagline": "Evidence‑based answers from research papers",
+      "description": "Evidence‑based answers from research papers",
+      "category": "Research",
+      "tags": [
+        "research",
+        "papers",
+        "summaries"
+      ],
+      "pricing": "Subscription"
+    },
+    {
+      "id": "marketmuse-lite",
+      "name": "MarketMuse Lite",
+      "slug": "marketmuse-lite",
+      "tagline": "Content planning with AI topic modeling",
+      "description": "Content planning with AI topic modeling",
+      "category": "Marketing",
+      "tags": [
+        "marketing",
+        "seo",
+        "planning"
+      ],
+      "pricing": "Pro $79/mo"
+    },
+    {
+      "id": "phrasee",
+      "name": "Phrasee (example)",
+      "slug": "phrasee",
+      "tagline": "AI subject lines & email copy optimizer",
+      "description": "AI subject lines & email copy optimizer",
+      "category": "Marketing",
+      "tags": [
+        "email",
+        "marketing",
+        "copy"
+      ],
+      "pricing": "Enterprise"
+    },
+    {
+      "id": "prompthub",
+      "name": "PromptHub",
+      "slug": "prompthub",
+      "tagline": "Curated prompts and templates marketplace",
+      "description": "Curated prompts and templates marketplace",
+      "category": "Utilities",
+      "tags": [
+        "prompts",
+        "marketplace",
+        "templates"
+      ],
+      "pricing": "Freemium"
+    },
+    {
+      "id": "promptbase-lite",
+      "name": "PromptBase Lite",
+      "slug": "promptbase-lite",
+      "tagline": "Quick prompt packs for common tasks",
+      "description": "Quick prompt packs for common tasks",
+      "category": "Utilities",
+      "tags": [
+        "prompts",
+        "packs",
+        "utility"
+      ],
+      "pricing": "One-time packs"
+    },
+    {
+      "id": "scribely",
+      "name": "Scribely",
+      "slug": "scribely",
+      "tagline": "Docs generation and versioned knowledge base",
+      "description": "Docs generation and versioned knowledge base",
+      "category": "Productivity",
+      "tags": [
+        "docs",
+        "knowledge",
+        "kb"
+      ],
+      "pricing": "Subscription"
+    },
+    {
+      "id": "synthdocs",
+      "name": "SynthDocs",
+      "slug": "synthdocs",
+      "tagline": "Auto-generated API docs from code & comments",
+      "description": "Auto-generated API docs from code & comments",
+      "category": "Developer Tools",
+      "tags": [
+        "developer",
+        "docs",
+        "api"
+      ],
+      "pricing": "Freemium"
+    },
+    {
+      "id": "imageopt",
+      "name": "ImageOpt AI",
+      "slug": "imageopt",
+      "tagline": "Automatic image optimization and upscaling",
+      "description": "Automatic image optimization and upscaling",
+      "category": "Images",
+      "tags": [
+        "images",
+        "optimize",
+        "upscale"
+      ],
+      "pricing": "Credits-based"
+    },
+    {
+      "id": "vidopt",
+      "name": "VidOpt",
+      "slug": "vidopt",
+      "tagline": "Video compression & smart trimming with AI",
+      "description": "Video compression & smart trimming with AI",
+      "category": "Video",
+      "tags": [
+        "video",
+        "compression",
+        "social"
+      ],
+      "pricing": "Subscription"
+    }
+  ],
+  "generatedAt": "2026-01-25T23:48:44.318Z"
+}
