@@ -30,6 +30,11 @@ export const metadata: Metadata = {
     authors: [{ name: siteMetadata.author.name }],
     creator: siteMetadata.author.name,
     publisher: siteMetadata.siteName,
+
+    verification: {
+        google: 'MOrR4sWVIJWPXe-ax4xER-leVq0nIN_zpAEi9-ZaYdc',
+    },
+
     formatDetection: {
         email: false,
         address: false,
