@@ -125,6 +125,9 @@ export default function ToolPage({ params }: Props) {
                                 </Link>
                             </div>
                         </div>
+                        <p className="text-xs text-muted-foreground mt-2 text-center sm:text-right">
+                            Disclosure: Some links may be affiliate links. We may earn a commission at no extra cost to you.
+                        </p>
 
                         <div className="flex flex-wrap gap-2 mb-6">
                             {tool.category && (

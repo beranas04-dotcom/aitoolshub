@@ -164,15 +164,20 @@ export default function BestTopicPage({ params }: Props) {
                                         <td className="px-6 py-4 text-muted-foreground">{tool.category}</td>
                                         <td className="px-6 py-4">
                                             <span className={`inline-flex px-2.5 py-0.5 rounded-full text-xs font-medium ${tool.pricing === 'free' ? 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400' :
-                                                    tool.pricing === 'freemium' ? 'bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400' :
-                                                        'bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-300'
+                                                tool.pricing === 'freemium' ? 'bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400' :
+                                                    'bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-300'
                                                 }`}>
                                                 {tool.pricing}
                                             </span>
                                         </td>
                                         <td className="px-6 py-4 text-right">
-                                            <Link href={`/tools/${tool.id}`} className="text-primary hover:text-primary/80 font-semibold hover:underline">
-                                                View →
+                                            <Link
+                                                href={`/api/out?toolId=${tool.id}&url=${encodeURIComponent(tool.affiliateUrl || tool.website || '')}`}
+                                                target="_blank"
+                                                rel="sponsored noopener noreferrer"
+                                                className="text-primary hover:text-primary/80 font-semibold hover:underline"
+                                            >
+                                                Visit →
                                             </Link>
                                         </td>
                                     </tr>

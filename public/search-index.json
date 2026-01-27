@@ -1,60 +1,60 @@
 {
   "tools": [
     {
-      "id": "copycraft",
-      "name": "CopyCraft",
-      "slug": "copycraft",
-      "tagline": "AI copywriting assistant for ads & landing pages",
-      "description": "AI copywriting assistant for ads & landing pages",
+      "id": "jasper-ai",
+      "name": "Jasper AI",
+      "slug": "jasper-ai",
+      "tagline": "AI copywriter and content strategy platform",
+      "description": "AI copywriter and content strategy platform",
       "category": "Writing",
       "tags": [
         "writing",
-        "ads",
-        "copy"
+        "marketing",
+        "enterprise"
       ],
-      "pricing": "Freemium, Pro $29/mo"
+      "pricing": "Paid, from $39/mo"
     },
     {
-      "id": "writeflow",
-      "name": "WriteFlow",
-      "slug": "writeflow",
-      "tagline": "Long-form AI writing with SEO outlines",
-      "description": "Long-form AI writing with SEO outlines",
+      "id": "writesonic",
+      "name": "Writesonic",
+      "slug": "writesonic",
+      "tagline": "AI writer and SEO content generator",
+      "description": "AI writer and SEO content generator",
       "category": "Writing",
       "tags": [
         "writing",
         "seo",
-        "content"
+        "blogging"
       ],
-      "pricing": "Pro $39/mo"
+      "pricing": "Freemium, Paid from $12/mo"
     },
     {
-      "id": "draftly",
-      "name": "Draftly",
-      "slug": "draftly",
-      "tagline": "Fast article drafts from a single prompt",
-      "description": "Fast article drafts from a single prompt",
+      "id": "copy-ai",
+      "name": "Copy.ai",
+      "slug": "copy-ai",
+      "tagline": "AI marketing and sales copy generator",
+      "description": "AI marketing and sales copy generator",
       "category": "Writing",
       "tags": [
         "writing",
-        "draft",
-        "export"
+        "marketing",
+        "workflows"
       ],
-      "pricing": "Pay-as-you-go"
+      "pricing": "Freemium, Pro $36/mo"
     },
     {
-      "id": "surferseo-lite",
-      "name": "SurferSEO Lite",
-      "slug": "surferseo-lite",
-      "tagline": "SEO-driven content editor with AI suggestions",
-      "description": "SEO-driven content editor with AI suggestions",
+      "id": "surfer-seo",
+      "name": "Surfer SEO",
+      "slug": "surfer-seo",
+      "tagline": "Data-driven SEO auditing and content optimization",
+      "description": "Data-driven SEO auditing and content optimization",
       "category": "Writing",
       "tags": [
         "seo",
         "writing",
         "optimization"
       ],
-      "pricing": "Freemium, Pro $49/mo"
+      "pricing": "Paid, from $89/mo"
     },
     {
       "id": "midjourneyx",
@@ -85,22 +85,22 @@
       "pricing": "Credits-based"
     },
     {
-      "id": "stableart",
-      "name": "StableArt",
-      "slug": "stableart",
-      "tagline": "Open-source image diffusion with style control",
-      "description": "Open-source image diffusion with style control",
+      "id": "canva",
+      "name": "Canva",
+      "slug": "canva",
+      "tagline": "All-in-one visual design tool with AI magic",
+      "description": "All-in-one visual design tool with AI magic",
       "category": "Images",
       "tags": [
+        "design",
         "images",
-        "diffusion",
-        "open-source"
+        "marketing"
       ],
-      "pricing": "Free / Self-host"
+      "pricing": "Freemium, Pro $14.99/mo"
     },
     {
       "id": "leonardo-ai",
-      "name": "Leonardo AI (example)",
+      "name": "Leonardo.ai",
       "slug": "leonardo-ai",
       "tagline": "Creative workflow for game & concept artists",
       "description": "Creative workflow for game & concept artists",
@@ -114,7 +114,7 @@
     },
     {
       "id": "runwayml",
-      "name": "RunwayML (example)",
+      "name": "Runway",
       "slug": "runwayml",
       "tagline": "AI tools for video creation and editing",
       "description": "AI tools for video creation and editing",
@@ -128,7 +128,7 @@
     },
     {
       "id": "pictory",
-      "name": "Pictory (example)",
+      "name": "Pictory",
       "slug": "pictory",
       "tagline": "Turn scripts into shareable videos",
       "description": "Turn scripts into shareable videos",
@@ -142,7 +142,7 @@
     },
     {
       "id": "synthesia-lite",
-      "name": "Synthesia Lite",
+      "name": "Synthesia",
       "slug": "synthesia-lite",
       "tagline": "AI avatars & text-to-video for training",
       "description": "AI avatars & text-to-video for training",
@@ -156,7 +156,7 @@
     },
     {
       "id": "elevenlabs-voice",
-      "name": "ElevenVoice",
+      "name": "ElevenLabs",
       "slug": "elevenlabs-voice",
       "tagline": "Ultra‑natural text-to-speech & voice cloning",
       "description": "Ultra‑natural text-to-speech & voice cloning",
@@ -170,7 +170,7 @@
     },
     {
       "id": "murf",
-      "name": "Murf (example)",
+      "name": "Murf AI",
       "slug": "murf",
       "tagline": "Studio-grade voiceovers in minutes",
       "description": "Studio-grade voiceovers in minutes",
@@ -184,7 +184,7 @@
     },
     {
       "id": "playht",
-      "name": "PlayHT (example)",
+      "name": "PlayHT",
       "slug": "playht",
       "tagline": "Realistic TTS for podcasts & narration",
       "description": "Realistic TTS for podcasts & narration",
@@ -197,18 +197,18 @@
       "pricing": "Subscription"
     },
     {
-      "id": "roamai",
-      "name": "RoamAI",
-      "slug": "roamai",
-      "tagline": "AI note assistant inside your workspace",
-      "description": "AI note assistant inside your workspace",
+      "id": "notion-ai",
+      "name": "Notion AI",
+      "slug": "notion-ai",
+      "tagline": "Connected AI, writer, and Q&A inside Notion",
+      "description": "Connected AI, writer, and Q&A inside Notion",
       "category": "Productivity",
       "tags": [
         "productivity",
         "notes",
-        "summaries"
+        "writing"
       ],
-      "pricing": "Included in plans"
+      "pricing": "Add-on $10/mo"
     },
     {
       "id": "otterai",
@@ -407,5 +407,5 @@
       "pricing": "Subscription"
     }
   ],
-  "generatedAt": "2026-01-25T23:48:44.318Z"
+  "generatedAt": "2026-01-27T23:07:06.056Z"
 }

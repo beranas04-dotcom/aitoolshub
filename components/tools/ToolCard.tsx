@@ -40,8 +40,9 @@ export default function ToolCard({ tool }: { tool: Tool }) {
 
                 {(tool.affiliateUrl || tool.website) && (
                     <Link
-                        href={tool.affiliateUrl || tool.website || '#'}
+                        href={`/api/out?toolId=${tool.id}&url=${encodeURIComponent(tool.affiliateUrl || tool.website || '')}`}
                         target="_blank"
+                        rel="sponsored noopener noreferrer"
                         className="text-primary text-sm font-medium hover:underline ml-auto"
                     >
                         Visit →

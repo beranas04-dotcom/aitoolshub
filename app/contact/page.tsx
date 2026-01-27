@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import { siteMetadata } from '@/lib/siteMetadata';
+import { ContactForm } from './contact-form';
 
 export const metadata: Metadata = {
     title: 'Contact Us - AIToolsHub',
@@ -10,63 +10,22 @@ export default function ContactPage() {
     return (
         <main className="container mx-auto px-4 py-16 max-w-2xl">
             <h1 className="text-4xl font-bold mb-4 font-display">Contact Us</h1>
-            <p className="text-muted-foreground mb-8">
-                Have a question, suggestion, or just want to say hi? We'd love to hear from you.
+            <p className="text-muted-foreground mb-8 text-lg">
+                Have questions, suggestions, or want to partner with us? We'd love to hear from you.
             </p>
 
-            <div className="bg-card border border-border rounded-xl p-8 shadow-sm">
-                <form
-                    action={`mailto:${siteMetadata.author.email}`}
-                    method="GET"
-                    encType="text/plain"
-                    className="space-y-6"
-                >
-                    <div>
-                        <label htmlFor="subject" className="block text-sm font-medium mb-2">Subject</label>
-                        <input
-                            type="text"
-                            name="subject"
-                            id="subject"
-                            placeholder="What is this regarding?"
-                            className="w-full px-4 py-2 rounded-md border border-input bg-background focus:ring-2 focus:ring-primary focus:outline-none"
-                            required
-                        />
-                    </div>
+            <ContactForm />
 
-                    <div>
-                        <label htmlFor="body" className="block text-sm font-medium mb-2">Message</label>
-                        <textarea
-                            name="body"
-                            id="body"
-                            rows={6}
-                            placeholder="Type your message here..."
-                            className="w-full px-4 py-2 rounded-md border border-input bg-background focus:ring-2 focus:ring-primary focus:outline-none resize-none"
-                            required
-                        ></textarea>
-                    </div>
-
-                    <button
-                        type="submit"
-                        className="w-full bg-primary text-primary-foreground font-semibold py-3 px-6 rounded-md hover:bg-primary/90 transition-colors"
-                    >
-                        Send Message
-                    </button>
-
-                    <p className="text-xs text-center text-muted-foreground mt-4">
-                        This will open your default email client.
-                    </p>
-                </form>
-            </div>
-
-            <div className="mt-12 text-center">
+            <div className="text-center space-y-2">
                 <p className="text-muted-foreground">
-                    Alternatively, you can email us directly at:
+                    Alternatively, email us directly at
                 </p>
                 <a
-                    href={`mailto:${siteMetadata.author.email}`}
-                    className="text-primary font-medium hover:underline text-lg"
+                    href="mailto:aitoolshub.contact@gmail.com"
+                    className="text-primary font-medium hover:underline text-lg inline-flex items-center gap-2"
                 >
-                    {siteMetadata.author.email}
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="16" x="2" y="4" rx="2" /><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" /></svg>
+                    aitoolshub.contact@gmail.com
                 </a>
             </div>
         </main>
