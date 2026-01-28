@@ -99,6 +99,22 @@ export default function RootLayout({
                         <Footer />
                     </AuthProvider>
                 </ThemeProvider>
+                {/* Google Analytics */}
+                <script
+                    async
+                    src="https://www.googletagmanager.com/gtag/js?id=G-FLFV9CFR3N"
+                />
+                <script
+                    dangerouslySetInnerHTML={{
+                        __html: `
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-FLFV9CFR3N');
+    `,
+                    }}
+                />
+
                 <script
                     type="application/ld+json"
                     dangerouslySetInnerHTML={{
