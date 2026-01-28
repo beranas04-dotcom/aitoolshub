@@ -5,7 +5,8 @@ import { getAllTopics } from '@/lib/topics';
 import { getAllPosts } from '@/lib/blog';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-    const siteUrl = 'https://aitoolshub-gules.vercel.app';
+    const siteUrl =
+        process.env.NEXT_PUBLIC_SITE_URL || "https://aitoolshub-gules.vercel.app";
 
     // Static Routes
     const staticRoutes = [
