@@ -42,23 +42,19 @@ export default function ToolCard({ tool }: { tool: Tool }) {
 
                 {(tool.affiliateUrl || tool.website) && (
                     <Link
-                        href={`/api/out?toolId=${tool.id}&url=${encodeURIComponent((tool.affiliateUrl && tool.affiliateUrl.trim() !== '') ? tool.affiliateUrl : tool.website || '')}`}
+                        href={`/api/out?toolId=${tool.id}&url=${encodeURIComponent(
+                            (tool.affiliateUrl && tool.affiliateUrl.trim() !== "")
+                                ? tool.affiliateUrl
+                                : tool.website || ""
+                        )}`}
                         target="_blank"
                         rel="sponsored noopener noreferrer"
                         className="text-primary text-sm font-medium hover:underline ml-auto"
-                        onClick={() => {
-                            if (typeof window !== 'undefined' && window.gtag) {
-                                window.gtag('event', 'affiliate_click', {
-                                    tool_name: tool.name,
-                                    tool_category: tool.category || 'uncategorized',
-                                    destination_url: (tool.affiliateUrl && tool.affiliateUrl.trim() !== '') ? tool.affiliateUrl : tool.website || ''
-                                });
-                            }
-                        }}
                     >
                         Visit →
                     </Link>
                 )}
+
             </div>
         </div>
     );
