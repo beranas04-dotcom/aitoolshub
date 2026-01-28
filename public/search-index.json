@@ -6,7 +6,7 @@
       "slug": "jasper-ai",
       "tagline": "AI copywriter and content strategy platform",
       "description": "AI copywriter and content strategy platform",
-      "category": "Writing",
+      "category": "writing",
       "tags": [
         "writing",
         "marketing",
@@ -20,7 +20,7 @@
       "slug": "writesonic",
       "tagline": "AI writer and SEO content generator",
       "description": "AI writer and SEO content generator",
-      "category": "Writing",
+      "category": "writing",
       "tags": [
         "writing",
         "seo",
@@ -34,7 +34,7 @@
       "slug": "copy-ai",
       "tagline": "AI marketing and sales copy generator",
       "description": "AI marketing and sales copy generator",
-      "category": "Writing",
+      "category": "writing",
       "tags": [
         "writing",
         "marketing",
@@ -48,7 +48,7 @@
       "slug": "surfer-seo",
       "tagline": "Data-driven SEO auditing and content optimization",
       "description": "Data-driven SEO auditing and content optimization",
-      "category": "Writing",
+      "category": "writing",
       "tags": [
         "seo",
         "writing",
@@ -62,7 +62,7 @@
       "slug": "midjourneyx",
       "tagline": "Creative image prompts for concept art",
       "description": "Creative image prompts for concept art",
-      "category": "Images",
+      "category": "images",
       "tags": [
         "images",
         "art",
@@ -76,7 +76,7 @@
       "slug": "dalle3-proxy",
       "tagline": "Text-to-image for photoreal & illustrations",
       "description": "Text-to-image for photoreal & illustrations",
-      "category": "Images",
+      "category": "images",
       "tags": [
         "images",
         "text-to-image",
@@ -90,7 +90,7 @@
       "slug": "canva",
       "tagline": "All-in-one visual design tool with AI magic",
       "description": "All-in-one visual design tool with AI magic",
-      "category": "Images",
+      "category": "images",
       "tags": [
         "design",
         "images",
@@ -104,7 +104,7 @@
       "slug": "leonardo-ai",
       "tagline": "Creative workflow for game & concept artists",
       "description": "Creative workflow for game & concept artists",
-      "category": "Images",
+      "category": "images",
       "tags": [
         "images",
         "game-dev",
@@ -118,7 +118,7 @@
       "slug": "runwayml",
       "tagline": "AI tools for video creation and editing",
       "description": "AI tools for video creation and editing",
-      "category": "Video",
+      "category": "video",
       "tags": [
         "video",
         "editing",
@@ -132,7 +132,7 @@
       "slug": "pictory",
       "tagline": "Turn scripts into shareable videos",
       "description": "Turn scripts into shareable videos",
-      "category": "Video",
+      "category": "video",
       "tags": [
         "video",
         "script",
@@ -146,7 +146,7 @@
       "slug": "synthesia-lite",
       "tagline": "AI avatars & text-to-video for training",
       "description": "AI avatars & text-to-video for training",
-      "category": "Video",
+      "category": "video",
       "tags": [
         "video",
         "tts",
@@ -160,7 +160,7 @@
       "slug": "elevenlabs-voice",
       "tagline": "Ultra‑natural text-to-speech & voice cloning",
       "description": "Ultra‑natural text-to-speech & voice cloning",
-      "category": "Audio",
+      "category": "audio",
       "tags": [
         "audio",
         "tts",
@@ -174,7 +174,7 @@
       "slug": "murf",
       "tagline": "Studio-grade voiceovers in minutes",
       "description": "Studio-grade voiceovers in minutes",
-      "category": "Audio",
+      "category": "audio",
       "tags": [
         "audio",
         "voiceovers",
@@ -188,7 +188,7 @@
       "slug": "playht",
       "tagline": "Realistic TTS for podcasts & narration",
       "description": "Realistic TTS for podcasts & narration",
-      "category": "Audio",
+      "category": "audio",
       "tags": [
         "audio",
         "tts",
@@ -202,7 +202,7 @@
       "slug": "notion-ai",
       "tagline": "Connected AI, writer, and Q&A inside Notion",
       "description": "Connected AI, writer, and Q&A inside Notion",
-      "category": "Productivity",
+      "category": "productivity",
       "tags": [
         "productivity",
         "notes",
@@ -216,7 +216,7 @@
       "slug": "otterai",
       "tagline": "Meeting transcription & searchable notes",
       "description": "Meeting transcription & searchable notes",
-      "category": "Productivity",
+      "category": "productivity",
       "tags": [
         "transcription",
         "meetings",
@@ -230,7 +230,7 @@
       "slug": "fireflies",
       "tagline": "AI meeting assistant with highlights",
       "description": "AI meeting assistant with highlights",
-      "category": "Productivity",
+      "category": "productivity",
       "tags": [
         "meetings",
         "crm",
@@ -244,7 +244,7 @@
       "slug": "replitai",
       "tagline": "AI-powered coding assistant in the browser",
       "description": "AI-powered coding assistant in the browser",
-      "category": "Code",
+      "category": "code",
       "tags": [
         "code",
         "ide",
@@ -258,7 +258,7 @@
       "slug": "gitassist",
       "tagline": "PR summaries & codebase search with AI",
       "description": "PR summaries & codebase search with AI",
-      "category": "Code",
+      "category": "code",
       "tags": [
         "code",
         "reviews",
@@ -272,7 +272,7 @@
       "slug": "perplexity-ai",
       "tagline": "AI research assistant and answer engine",
       "description": "AI research assistant and answer engine",
-      "category": "Research",
+      "category": "research",
       "tags": [
         "research",
         "qa",
@@ -286,7 +286,7 @@
       "slug": "consensus",
       "tagline": "Evidence‑based answers from research papers",
       "description": "Evidence‑based answers from research papers",
-      "category": "Research",
+      "category": "research",
       "tags": [
         "research",
         "papers",
@@ -300,7 +300,7 @@
       "slug": "marketmuse-lite",
       "tagline": "Content planning with AI topic modeling",
       "description": "Content planning with AI topic modeling",
-      "category": "Marketing",
+      "category": "marketing",
       "tags": [
         "marketing",
         "seo",
@@ -314,7 +314,7 @@
       "slug": "phrasee",
       "tagline": "AI subject lines & email copy optimizer",
       "description": "AI subject lines & email copy optimizer",
-      "category": "Marketing",
+      "category": "marketing",
       "tags": [
         "email",
         "marketing",
@@ -328,7 +328,7 @@
       "slug": "prompthub",
       "tagline": "Curated prompts and templates marketplace",
       "description": "Curated prompts and templates marketplace",
-      "category": "Utilities",
+      "category": "utilities",
       "tags": [
         "prompts",
         "marketplace",
@@ -342,7 +342,7 @@
       "slug": "promptbase-lite",
       "tagline": "Quick prompt packs for common tasks",
       "description": "Quick prompt packs for common tasks",
-      "category": "Utilities",
+      "category": "utilities",
       "tags": [
         "prompts",
         "packs",
@@ -356,7 +356,7 @@
       "slug": "scribely",
       "tagline": "Docs generation and versioned knowledge base",
       "description": "Docs generation and versioned knowledge base",
-      "category": "Productivity",
+      "category": "productivity",
       "tags": [
         "docs",
         "knowledge",
@@ -370,7 +370,7 @@
       "slug": "synthdocs",
       "tagline": "Auto-generated API docs from code & comments",
       "description": "Auto-generated API docs from code & comments",
-      "category": "Developer Tools",
+      "category": "developer-tools",
       "tags": [
         "developer",
         "docs",
@@ -380,11 +380,11 @@
     },
     {
       "id": "imageopt",
-      "name": "ImageOpt AI",
+      "name": "imageOpt AI",
       "slug": "imageopt",
       "tagline": "Automatic image optimization and upscaling",
       "description": "Automatic image optimization and upscaling",
-      "category": "Images",
+      "category": "images",
       "tags": [
         "images",
         "optimize",
@@ -396,9 +396,9 @@
       "id": "vidopt",
       "name": "VidOpt",
       "slug": "vidopt",
-      "tagline": "Video compression & smart trimming with AI",
-      "description": "Video compression & smart trimming with AI",
-      "category": "Video",
+      "tagline": "video compression & smart trimming with AI",
+      "description": "video compression & smart trimming with AI",
+      "category": "video",
       "tags": [
         "video",
         "compression",
@@ -407,5 +407,5 @@
       "pricing": "Subscription"
     }
   ],
-  "generatedAt": "2026-01-28T13:21:11.024Z"
+  "generatedAt": "2026-01-28T15:35:04.120Z"
 }
