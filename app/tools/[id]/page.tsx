@@ -19,19 +19,65 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         };
     }
 
+    // Generate optimized description (150-160 characters)
+    const generateDescription = () => {
+        if (tool.description && tool.description.length >= 150) {
+            // Truncate to 160 chars and add ellipsis
+            return tool.description.length > 160
+                ? tool.description.substring(0, 157) + '...'
+                : tool.description;
+        }
+
+        // Fallback: combine tagline with pricing info
+        const baseDesc = tool.tagline || `${tool.name} is an AI-powered tool`;
+        const pricingInfo = tool.pricing ? ` Pricing: ${tool.pricing}.` : '';
+        const categoryInfo = tool.category ? ` Category: ${tool.category}.` : '';
+
+        const combined = baseDesc + pricingInfo + categoryInfo;
+        return combined.length > 160
+            ? combined.substring(0, 157) + '...'
+            : combined;
+    };
+
+    const description = generateDescription();
+    const ogTitle = `${tool.name} Review, Features & Pricing | AI Tools Hub`;
+    const ogImage = tool.logo ? `https://aitoolshub.com${tool.logo}` : 'https://aitoolshub.com/og-image.png';
+
     return {
-        title: `${tool.name} — AIToolsHub`,
-        description: tool.tagline,
+        title: `${tool.name} Review, Features & Pricing | AI Tools Hub`,
+        description,
+        keywords: [
+            tool.name,
+            ...(tool.category ? [tool.category, `${tool.category} tools`] : []),
+            ...(tool.tags || []),
+            'AI tools',
+            'artificial intelligence',
+            'productivity'
+        ],
         openGraph: {
-            title: `${tool.name} — AIToolsHub`,
-            description: tool.tagline,
-            images: [tool.logo ? `https://aitoolshub.com${tool.logo}` : '/og-image.png'],
+            title: ogTitle,
+            description,
+            type: 'website',
+            url: `https://aitoolshub.com/tools/${tool.id}`,
+            images: [
+                {
+                    url: ogImage,
+                    width: 1200,
+                    height: 630,
+                    alt: `${tool.name} - AI Tool`,
+                }
+            ],
+            siteName: 'AI Tools Hub',
         },
         twitter: {
-            card: 'summary',
-            title: `${tool.name} — AIToolsHub`,
-            description: tool.tagline,
-            images: [tool.logo ? `https://aitoolshub.com${tool.logo}` : '/og-image.png'],
+            card: 'summary_large_image',
+            title: ogTitle,
+            description,
+            images: [ogImage],
+            creator: '@aitoolshub',
+        },
+        alternates: {
+            canonical: `https://aitoolshub.com/tools/${tool.id}`,
         },
     };
 }
@@ -116,7 +162,7 @@ export default function ToolPage({ params }: Props) {
                                     <p className="text-sm text-muted-foreground">Boost your productivity with AI.</p>
                                 </div>
                                 <Link
-                                    href={`/api/out?toolId=${tool.id}&url=${encodeURIComponent(tool.affiliateUrl || tool.website || '')}`}
+                                    href={`/api/out?toolId=${tool.id}&url=${encodeURIComponent((tool.affiliateUrl && tool.affiliateUrl.trim() !== '') ? tool.affiliateUrl : tool.website || '')}`}
                                     target="_blank"
                                     rel="sponsored nofollow noopener noreferrer"
                                     className="w-full sm:w-auto bg-primary text-primary-foreground hover:bg-primary/90 text-center py-2.5 px-6 rounded-lg font-semibold transition shadow-md"
@@ -145,6 +191,69 @@ export default function ToolPage({ params }: Props) {
                         <p className="text-foreground/90 leading-relaxed mb-8">
                             {tool.description || "No detailed description available."}
                         </p>
+
+                        {/* Why Choose This Tool? */}
+                        <div className="mb-8 bg-primary/5 border border-primary/20 rounded-xl p-6">
+                            <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
+                                <span className="text-primary">⭐</span> Why Choose This Tool?
+                            </h3>
+                            <ul className="space-y-3">
+                                <li className="flex items-start gap-3">
+                                    <span className="text-primary font-bold mt-0.5">✓</span>
+                                    <span className="text-foreground/90">
+                                        {tool.pros && tool.pros.length > 0
+                                            ? tool.pros[0]
+                                            : `${tool.name} offers cutting-edge AI capabilities designed for professional use`}
+                                    </span>
+                                </li>
+                                <li className="flex items-start gap-3">
+                                    <span className="text-primary font-bold mt-0.5">✓</span>
+                                    <span className="text-foreground/90">
+                                        Trusted by thousands of users worldwide for reliable results
+                                    </span>
+                                </li>
+                                <li className="flex items-start gap-3">
+                                    <span className="text-primary font-bold mt-0.5">✓</span>
+                                    <span className="text-foreground/90">
+                                        {tool.freeTrial
+                                            ? "Free trial available - test before you commit"
+                                            : "Proven track record of delivering value to businesses and creators"}
+                                    </span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        {/* Best For */}
+                        <div className="mb-8">
+                            <h3 className="text-xl font-semibold mb-4">Best For</h3>
+                            <p className="text-foreground/90 leading-relaxed bg-muted/30 border border-border rounded-lg p-4">
+                                {tool.category && (
+                                    <>
+                                        <strong>{tool.name}</strong> is ideal for professionals and teams working in{' '}
+                                        <span className="text-primary font-medium">{tool.category.toLowerCase()}</span>
+                                        {tool.useCases && tool.useCases.length > 0
+                                            ? `, particularly those who need to ${tool.useCases[0].toLowerCase()}.`
+                                            : `. Whether you're a freelancer, startup, or enterprise, this tool adapts to your workflow.`}
+                                        {' '}Perfect for users who value efficiency, quality, and innovation in their daily tasks.
+                                    </>
+                                )}
+                                {!tool.category && (
+                                    <>
+                                        <strong>{tool.name}</strong> is perfect for professionals and teams looking to leverage
+                                        AI technology to streamline their workflow and boost productivity. Whether you're a
+                                        freelancer, startup, or enterprise, this tool adapts to your needs.
+                                    </>
+                                )}
+                            </p>
+                        </div>
+
+                        {/* Alternatives - Placeholder */}
+                        <div className="mb-8">
+                            <h3 className="text-xl font-semibold mb-4">Alternatives to {tool.name}</h3>
+                            <p className="text-muted-foreground text-sm">
+                                Exploring alternatives? Check out our comprehensive guides to find the best tool for your needs.
+                            </p>
+                        </div>
 
                         {tool.features && tool.features.length > 0 && (
                             <div className="mb-8">
@@ -246,7 +355,7 @@ export default function ToolPage({ params }: Props) {
 
                         <div className="flex flex-col sm:flex-row gap-4 mt-8 pt-6 border-t border-border">
                             <Link
-                                href={`/api/out?toolId=${tool.id}&url=${encodeURIComponent(tool.affiliateUrl || tool.website || '')}`}
+                                href={`/api/out?toolId=${tool.id}&url=${encodeURIComponent((tool.affiliateUrl && tool.affiliateUrl.trim() !== '') ? tool.affiliateUrl : tool.website || '')}`}
                                 target="_blank"
                                 rel="sponsored nofollow noopener noreferrer"
                                 className="flex-1 bg-primary text-primary-foreground hover:bg-primary/90 text-center py-3 px-6 rounded-lg font-semibold transition"
@@ -275,13 +384,34 @@ export default function ToolPage({ params }: Props) {
                     </div>
                 </div>
                 <Link
-                    href={`/api/out?toolId=${tool.id}&url=${encodeURIComponent(tool.affiliateUrl || tool.website || '')}`}
+                    href={`/api/out?toolId=${tool.id}&url=${encodeURIComponent((tool.affiliateUrl && tool.affiliateUrl.trim() !== '') ? tool.affiliateUrl : tool.website || '')}`}
                     target="_blank"
                     rel="sponsored nofollow noopener noreferrer"
                     className="bg-primary text-primary-foreground px-4 py-2 rounded-lg font-semibold text-sm hover:bg-primary/90 transition"
                 >
                     Visit
                 </Link>
+            </div>
+
+            {/* Second CTA - Bottom */}
+            <div className="mt-12 mb-16 bg-gradient-to-r from-primary/10 via-primary/5 to-primary/10 border border-primary/20 rounded-2xl p-8 text-center">
+                <h3 className="text-2xl font-bold mb-3">Ready to Get Started?</h3>
+                <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
+                    Join thousands of users who are already using {tool.name} to transform their workflow.
+                </p>
+                <Link
+                    href={`/api/out?toolId=${tool.id}&url=${encodeURIComponent((tool.affiliateUrl && tool.affiliateUrl.trim() !== '') ? tool.affiliateUrl : tool.website || '')}`}
+                    target="_blank"
+                    rel="sponsored nofollow noopener noreferrer"
+                    className="inline-block bg-primary text-primary-foreground hover:bg-primary/90 py-3 px-8 rounded-lg font-bold text-lg transition shadow-lg hover:shadow-xl"
+                >
+                    Try {tool.name} Now →
+                </Link>
+                {tool.freeTrial && (
+                    <p className="text-sm text-muted-foreground mt-4">
+                        ✓ Free trial available • No credit card required
+                    </p>
+                )}
             </div>
 
             {relatedPosts.length > 0 && (

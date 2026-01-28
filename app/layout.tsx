@@ -114,7 +114,6 @@ export default function RootLayout({
     `,
                     }}
                 />
-
                 <script
                     type="application/ld+json"
                     dangerouslySetInnerHTML={{

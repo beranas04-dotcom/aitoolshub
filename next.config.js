@@ -28,6 +28,20 @@ const nextConfig = {
                 ]
             }
         ]
+    },
+    async redirects() {
+        return [
+            {
+                source: '/category/:slug',
+                destination: '/categories/:slug',
+                permanent: true
+            },
+            {
+                source: '/tool/:id',
+                destination: '/tools/:id',
+                permanent: true
+            }
+        ]
     }
 }
 
