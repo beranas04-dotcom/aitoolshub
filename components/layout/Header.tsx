@@ -1,38 +1,41 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import Image from 'next/image';
-import { useAuth } from '@/components/providers/AuthProvider';
-import { useTheme } from '@/components/providers/ThemeProvider';
-import { siteMetadata } from '@/lib/siteMetadata';
-import { useState } from 'react';
+// Header component for site navigation
+import Link from "next/link";
+import Image from "next/image";
+import { useAuth } from "@/components/providers/AuthProvider";
+import { useTheme } from "@/components/providers/ThemeProvider";
+import { siteMetadata } from "@/lib/siteMetadata";
+import { useState } from "react";
+import HeaderSearch from "@/components/search/HeaderSearch";
 import {
     MoonIcon,
     SunIcon,
     Bars3Icon,
     XMarkIcon,
-    MagnifyingGlassIcon,
-    UserCircleIcon
-} from '@heroicons/react/24/outline';
+    UserCircleIcon,
+} from "@heroicons/react/24/outline";
 
-export default function Header() {
+function Header() {
     const { user, signOut } = useAuth();
     const { theme, toggleTheme } = useTheme();
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
     const navigation = [
-        { name: 'Home', href: '/' },
-        { name: 'Tools', href: '/tools' },
-        { name: 'Categories', href: '/categories' },
-        { name: 'Best', href: '/best' },
-        { name: 'Blog', href: '/blog' },
-        { name: 'Submit Tool', href: '/submit' },
+
+        { name: "Home", href: "/" },
+        { name: "Tools", href: "/tools" },
+        { name: "Categories", href: "/categories" },
+        { name: "Best", href: "/best" },
+        { name: "Blog", href: "/blog" },
+
+        { name: "Submit Tool", href: "/submit" },
     ];
 
     return (
         <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
             <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" aria-label="Top">
-                <div className="flex h-16 items-center justify-between">
+                <div className="flex h-16 items-center justify-between gap-4">
                     {/* Logo */}
                     <div className="flex items-center">
                         <Link href="/" className="flex items-center space-x-2">
@@ -63,24 +66,20 @@ export default function Header() {
                         ))}
                     </div>
 
+                    {/* Desktop Search (dropdown) */}
+                    <div className="hidden lg:flex flex-1 justify-center">
+                        <HeaderSearch />
+                    </div>
+
                     {/* Right side actions */}
                     <div className="flex items-center space-x-4">
-                        {/* Search button */}
-                        <Link
-                            href="/search"
-                            className="p-2 text-muted-foreground hover:text-foreground transition-colors"
-                            aria-label="Search"
-                        >
-                            <MagnifyingGlassIcon className="h-5 w-5" />
-                        </Link>
-
                         {/* Theme toggle */}
                         <button
                             onClick={toggleTheme}
                             className="p-2 text-muted-foreground hover:text-foreground transition-colors"
                             aria-label="Toggle theme"
                         >
-                            {theme === 'dark' ? (
+                            {theme === "dark" ? (
                                 <SunIcon className="h-5 w-5" />
                             ) : (
                                 <MoonIcon className="h-5 w-5" />
@@ -94,7 +93,7 @@ export default function Header() {
                                     {user.photoURL ? (
                                         <Image
                                             src={user.photoURL}
-                                            alt={user.displayName || 'User'}
+                                            alt={user.displayName || "User"}
                                             width={32}
                                             height={32}
                                             className="rounded-full"
@@ -105,25 +104,48 @@ export default function Header() {
                                 </button>
 
                                 {/* Dropdown menu */}
-                                <div className="absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-popover border border-border opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
+                                <div className="absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-popover border border-border opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
                                     <div className="py-1">
                                         <div className="px-4 py-2 text-sm text-muted-foreground border-b border-border">
                                             {user.email}
                                         </div>
-                                        {user.isAdmin && (
-                                            <Link
-                                                href="/admin"
-                                                className="block px-4 py-2 text-sm hover:bg-accent transition-colors"
-                                            >
-                                                Admin Panel
-                                            </Link>
-                                        )}
+
+                                        {/* Dashboard */}
+                                        <Link
+                                            href="/dashboard"
+                                            className="block px-4 py-2 text-sm hover:bg-accent transition-colors"
+                                        >
+                                            Dashboard
+                                        </Link>
+
+                                        {/* My Reviews */}
                                         <Link
                                             href="/my-reviews"
                                             className="block px-4 py-2 text-sm hover:bg-accent transition-colors"
                                         >
                                             My Reviews
                                         </Link>
+
+
+                                        {/* Admin links */}
+                                        {user.isAdmin && (
+                                            <>
+                                                <Link
+                                                    href="/admin"
+                                                    className="block px-4 py-2 text-sm hover:bg-accent transition-colors"
+                                                >
+                                                    Admin Panel
+                                                </Link>
+
+                                                <Link
+                                                    href="/admin/reviews"
+                                                    className="block px-4 py-2 text-sm hover:bg-accent transition-colors"
+                                                >
+                                                    Review Moderation
+                                                </Link>
+                                            </>
+                                        )}
+
                                         <button
                                             onClick={signOut}
                                             className="block w-full text-left px-4 py-2 text-sm hover:bg-accent transition-colors"
@@ -158,6 +180,11 @@ export default function Header() {
                     </div>
                 </div>
 
+                {/* Mobile Search */}
+                <div className="lg:hidden pb-3 pt-2">
+                    <HeaderSearch />
+                </div>
+
                 {/* Mobile menu */}
                 {mobileMenuOpen && (
                     <div className="md:hidden py-4 border-t border-border">
@@ -188,3 +215,5 @@ export default function Header() {
         </header>
     );
 }
+
+export default Header;

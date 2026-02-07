@@ -1,11 +1,17 @@
 import Link from 'next/link';
 import { getPaginatedTopics } from '@/lib/topics';
-import { Metadata } from 'next';
+import { Metadata } from "next";
+import { siteMetadata } from "@/lib/siteMetadata";
 
 export const metadata: Metadata = {
-    title: 'Best AI Tools Lists - AIToolsHub',
-    description: 'Explore our curated collections of the best AI tools for every profession and use case.',
+    title: "Best AI Tools Lists - AIToolsHub",
+    description:
+        "Explore our curated collections of the best AI tools for every profession and use case.",
+    alternates: {
+        canonical: `${siteMetadata.siteUrl.replace(/\/$/, "")}/best`,
+    },
 };
+
 
 export default function BestPage() {
     const { topics, totalPages } = getPaginatedTopics(1, 20);

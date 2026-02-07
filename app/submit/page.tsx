@@ -1,27 +1,30 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { createSubmission } from '@/lib/firestore'; // We'll assume this imports correctly per previous context
-// If createSubmission expects specific type, we might need adjustments, but let's try generic first.
-import { useRouter } from 'next/navigation';
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+import { createSubmission } from "@/lib/firestore";
+import { trackEvent } from "@/lib/analytics";
 
 export default function SubmitPage() {
     const router = useRouter();
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [success, setSuccess] = useState(false);
+
     const [formData, setFormData] = useState({
-        name: '',
-        website: '',
-        tagline: '',
-        description: '',
-        category: '',
-        pricing: 'Freemium',
-        email: '' // For contact
+        name: "",
+        website: "",
+        tagline: "",
+        description: "",
+        category: "",
+        pricing: "Freemium",
+        email: "",
     });
 
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const handleChange = (
+        e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+    ) => {
         const { name, value } = e.target;
-        setFormData(prev => ({ ...prev, [name]: value }));
+        setFormData((prev) => ({ ...prev, [name]: value }));
     };
 
     const handleSubmit = async (e: React.FormEvent) => {
@@ -29,25 +32,28 @@ export default function SubmitPage() {
         setIsSubmitting(true);
 
         try {
-            // Mapping fields to what createSubmission likely expects or just raw data
-            // Based on lib/firestore.ts reading: createSubmission(submission: Omit<Submission, 'id'>)
-            // We need to match Submission type.
             await createSubmission({
                 toolName: formData.name,
                 websiteUrl: formData.website,
                 description: formData.description,
                 category: formData.category,
                 submitterEmail: formData.email,
-                // other fields mapped loosely
-                status: 'pending',
-                createdAt: new Date().toISOString()
+                status: "pending",
+                createdAt: new Date().toISOString(),
             } as any);
-            // Type assertion used for safety if Interface isn't perfectly matched in this view context
+
+            // ✅ Track success submit
+            trackEvent("submit_tool", {
+                tool_name: formData.name,
+                category: formData.category,
+                pricing: formData.pricing,
+                source: "submit_page",
+            });
 
             setSuccess(true);
         } catch (error) {
             console.error(error);
-            alert('Failed to submit. Please try again.');
+            alert("Failed to submit. Please try again.");
         } finally {
             setIsSubmitting(false);
         }
@@ -61,10 +67,11 @@ export default function SubmitPage() {
                 </div>
                 <h1 className="text-3xl font-bold mb-4">Submission Received!</h1>
                 <p className="text-muted-foreground mb-8">
-                    Thank you for submitting <strong>{formData.name}</strong>. Our team will review it shortly.
+                    Thank you for submitting <strong>{formData.name}</strong>. Our team will
+                    review it shortly.
                 </p>
                 <button
-                    onClick={() => router.push('/')}
+                    onClick={() => router.push("/")}
                     className="bg-primary text-primary-foreground px-6 py-2 rounded-lg"
                 >
                     Back to Home
@@ -82,7 +89,10 @@ export default function SubmitPage() {
                 </p>
             </div>
 
-            <form onSubmit={handleSubmit} className="space-y-6 bg-card border border-border p-8 rounded-xl shadow-sm">
+            <form
+                onSubmit={handleSubmit}
+                className="space-y-6 bg-card border border-border p-8 rounded-xl shadow-sm"
+            >
                 <div className="grid md:grid-cols-2 gap-6">
                     <div className="space-y-2">
                         <label className="text-sm font-medium">Tool Name *</label>
@@ -96,6 +106,7 @@ export default function SubmitPage() {
                             placeholder="e.g. CopyCraft"
                         />
                     </div>
+
                     <div className="space-y-2">
                         <label className="text-sm font-medium">Website URL *</label>
                         <input
@@ -133,7 +144,7 @@ export default function SubmitPage() {
                         onChange={handleChange}
                         className="w-full px-4 py-2 rounded-lg border border-input bg-background focus:ring-2 focus:ring-primary focus:outline-none"
                         placeholder="Detailed explanation of what the tool does..."
-                    ></textarea>
+                    />
                 </div>
 
                 <div className="grid md:grid-cols-2 gap-6">
@@ -157,6 +168,7 @@ export default function SubmitPage() {
                             <option value="Other">Other</option>
                         </select>
                     </div>
+
                     <div className="space-y-2">
                         <label className="text-sm font-medium">Pricing *</label>
                         <select
@@ -192,7 +204,7 @@ export default function SubmitPage() {
                     disabled={isSubmitting}
                     className="w-full bg-primary text-primary-foreground font-bold py-3 px-6 rounded-lg hover:bg-primary/90 transition-colors disabled:opacity-70"
                 >
-                    {isSubmitting ? 'Submitting...' : 'Submit Tool'}
+                    {isSubmitting ? "Submitting..." : "Submit Tool"}
                 </button>
             </form>
         </main>

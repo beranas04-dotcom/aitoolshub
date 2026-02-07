@@ -1,26 +1,58 @@
-import { NextRequest, NextResponse } from 'next/server';
+import toolsData from "@/data/tools.json";
+import { NextRequest, NextResponse } from "next/server";
+
+function safeHttpUrl(u?: string | null) {
+    if (!u) return null;
+    try {
+        const url = new URL(u);
+        if (url.protocol === "http:" || url.protocol === "https:") return url.toString();
+        return null;
+    } catch {
+        return null;
+    }
+}
 
 export async function GET(request: NextRequest) {
-    const searchParams = request.nextUrl.searchParams;
-    const url = searchParams.get('url');
-    const toolId = searchParams.get('toolId');
+    const sp = request.nextUrl.searchParams;
 
-    if (!url) {
-        return new NextResponse('Missing URL parameter', { status: 400 });
+    // Old param (optional)
+    const rawUrl = sp.get("url");
+    const url = safeHttpUrl(rawUrl);
+
+    // New params
+    const toolIdOrSlug = (sp.get("toolId") || sp.get("id") || "").trim();
+
+    // 1) Keep old behavior if url is provided
+    if (url) {
+        const res = NextResponse.redirect(url, { status: 302 });
+        res.headers.set("Cache-Control", "no-store");
+        return res;
     }
 
-    try {
-        // Validate that the URL is valid and uses http/https
-        const targetUrl = new URL(url);
-        if (targetUrl.protocol !== 'http:' && targetUrl.protocol !== 'https:') {
-            return new NextResponse('Invalid URL protocol', { status: 400 });
-        }
-
-        // Here you would typically log the click event
-        // console.log(`Click tracked for tool ${toolId} to ${url}`);
-
-        return NextResponse.redirect(url, { status: 302 }); // Temporary redirect
-    } catch (error) {
-        return new NextResponse('Invalid URL provided', { status: 400 });
+    // 2) Otherwise redirect by toolId OR slug
+    if (!toolIdOrSlug) {
+        return new NextResponse("Missing toolId (or valid url) parameter", { status: 400 });
     }
+
+    const key = toolIdOrSlug.toLowerCase();
+
+    const tool = (toolsData as any[]).find((t) => {
+        const id = String(t?.id || "").toLowerCase();
+        const slug = String(t?.slug || "").toLowerCase();
+        return id === key || slug === key;
+    });
+
+    if (!tool) {
+        return new NextResponse("Tool not found", { status: 404 });
+    }
+
+    const target = safeHttpUrl(tool?.affiliateUrl) || safeHttpUrl(tool?.website);
+
+    if (!target) {
+        return new NextResponse("Tool has no valid website/affiliateUrl", { status: 400 });
+    }
+
+    const res = NextResponse.redirect(target, { status: 302 });
+    res.headers.set("Cache-Control", "no-store");
+    return res;
 }

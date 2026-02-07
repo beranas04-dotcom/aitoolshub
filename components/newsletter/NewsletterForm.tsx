@@ -1,39 +1,54 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { useRouter } from 'next/navigation';
-import { subscribeToNewsletter } from '@/lib/firestore';
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+import { subscribeToNewsletter } from "@/lib/firestore";
+import { trackEvent } from "@/lib/analytics";
 
 export default function NewsletterForm() {
-    const [email, setEmail] = useState('');
-    const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
-    const [message, setMessage] = useState('');
+    const [email, setEmail] = useState("");
+    const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">(
+        "idle"
+    );
+    const [message, setMessage] = useState("");
     const router = useRouter();
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        setStatus('loading');
-        setMessage('');
+        setStatus("loading");
+        setMessage("");
 
         if (!email || !/^\S+@\S+\.\S+$/.test(email)) {
-            setStatus('error');
-            setMessage('Please enter a valid email address.');
+            setStatus("error");
+            setMessage("Please enter a valid email address.");
             return;
         }
 
         try {
             await subscribeToNewsletter(email);
-            setStatus('success');
+
+            // ✅ Track success
+            trackEvent("newsletter_subscribe", {
+                source: "newsletter_form",
+            });
+
+            setStatus("success");
             setTimeout(() => {
-                router.push('/thanks');
+                router.push("/thanks");
             }, 500);
         } catch (error: any) {
-            if (error.message === 'Email already subscribed') {
-                setStatus('success'); // Treat as success to not leak info/annoy user, or show specific msg
+            if (error.message === "Email already subscribed") {
+                // Consider it success (UX)
+                trackEvent("newsletter_subscribe", {
+                    source: "newsletter_form",
+                    already_subscribed: true,
+                });
+
+                setStatus("success");
                 setMessage("You're already subscribed!");
             } else {
-                setStatus('error');
-                setMessage('Something went wrong. Please try again.');
+                setStatus("error");
+                setMessage("Something went wrong. Please try again.");
             }
         }
     };
@@ -48,10 +63,14 @@ export default function NewsletterForm() {
                     Get the Best AI Tools Weekly
                 </h2>
                 <p className="text-muted-foreground mb-8 text-lg">
-                    Join 10,000+ creators and developers. We scour the web for the most useful AI tools so you don't have to.
+                    Join 10,000+ creators and developers. We scour the web for the most
+                    useful AI tools so you don't have to.
                 </p>
 
-                <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto mb-4">
+                <form
+                    onSubmit={handleSubmit}
+                    className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto mb-4"
+                >
                     <input
                         type="email"
                         value={email}
@@ -62,15 +81,18 @@ export default function NewsletterForm() {
                     />
                     <button
                         type="submit"
-                        disabled={status === 'loading'}
+                        disabled={status === "loading"}
                         className="bg-primary text-primary-foreground px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors disabled:opacity-70 whitespace-nowrap"
                     >
-                        {status === 'loading' ? 'Joining...' : 'Subscribe Free'}
+                        {status === "loading" ? "Joining..." : "Subscribe Free"}
                     </button>
                 </form>
 
                 {message && (
-                    <p className={`text-sm mb-4 ${status === 'error' ? 'text-red-500' : 'text-green-600'}`}>
+                    <p
+                        className={`text-sm mb-4 ${status === "error" ? "text-red-500" : "text-green-600"
+                            }`}
+                    >
                         {message}
                     </p>
                 )}

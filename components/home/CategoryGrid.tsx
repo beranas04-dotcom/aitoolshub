@@ -1,42 +1,59 @@
-import Link from 'next/link';
-import { slugifyCategory } from '@/lib/utils';
-import toolsData from '@/data/tools.json';
-import { Tool } from '@/types';
+import Link from "next/link";
+import { slugifyCategory } from "@/lib/utils";
+import toolsData from "@/data/tools.json";
+import type { Tool } from "@/types";
 
-// Category metadata with icons and descriptions
-const categoryMetadata: Record<string, { icon: string; description: string }> = {
-    Writing: { icon: '✍️', description: 'AI copywriting & content tools' },
-    Images: { icon: '🎨', description: 'Image generation & editing' },
-    Video: { icon: '🎬', description: 'Video creation & editing' },
-    Audio: { icon: '🎵', description: 'Text-to-speech & voice tools' },
-    Productivity: { icon: '⚡', description: 'Notes, meetings & automation' },
-    Code: { icon: '💻', description: 'Coding assistants & IDEs' },
-    Research: { icon: '🔬', description: 'Research & answer engines' },
-    Marketing: { icon: '📈', description: 'SEO, email & campaigns' },
-    Utilities: { icon: '🔧', description: 'Prompts, templates & helpers' },
-    'Developer Tools': { icon: '🛠️', description: 'Docs, APIs & dev utilities' },
+// Metadata keys MUST match tools.json category values
+const categoryMetadata: Record<string, { icon: string; title: string; description: string }> = {
+    writing: { icon: "✍️", title: "Writing", description: "AI copywriting & content tools" },
+    images: { icon: "🎨", title: "Images", description: "Image generation & editing" },
+    video: { icon: "🎬", title: "Video", description: "Video creation & editing" },
+    audio: { icon: "🎵", title: "Audio", description: "Text-to-speech & voice tools" },
+    productivity: { icon: "⚡", title: "Productivity", description: "Notes, meetings & automation" },
+    code: { icon: "💻", title: "Code", description: "Coding assistants & IDEs" },
+    research: { icon: "🔬", title: "Research", description: "Research & answer engines" },
+    marketing: { icon: "📈", title: "Marketing", description: "SEO, email & campaigns" },
+    utilities: { icon: "🔧", title: "Utilities", description: "Prompts, templates & helpers" },
+    "developer-tools": { icon: "🛠️", title: "Developer Tools", description: "Docs, APIs & dev utilities" },
 };
 
+function prettifyCategory(raw: string) {
+    // fallback title if no metadata found
+    return raw
+        .replace(/-/g, " ")
+        .replace(/\b\w/g, (c) => c.toUpperCase());
+}
 
 export default function CategoryGrid() {
-    // Extract unique categories from tools.json
     const tools = toolsData as Tool[];
-    const uniqueCategories = [...new Set(tools.map(tool => tool.category).filter(Boolean))];
 
-    // Build category list with metadata
+    // count tools per category
+    const counts = tools.reduce<Record<string, number>>((acc, t) => {
+        if (!t.category) return acc;
+        acc[t.category] = (acc[t.category] || 0) + 1;
+        return acc;
+    }, {});
+
+    const uniqueCategories = Array.from(
+        new Set(tools.map((t) => t.category).filter((c): c is string => Boolean(c)))
+    );
+
     const categories = uniqueCategories
-        .map(categoryName => {
-            const metadata = categoryMetadata[categoryName!] || {
-                icon: '🔹',
-                description: 'AI tools and utilities'
-            };
+        .map((key) => {
+            const meta = categoryMetadata[key];
+            const title = meta?.title ?? prettifyCategory(key);
+
             return {
-                name: categoryName!,
-                icon: metadata.icon,
-                description: metadata.description
+                key,
+                title,
+                icon: meta?.icon ?? "🔹",
+                description: meta?.description ?? "AI tools and utilities",
+                count: counts[key] ?? 0,
+                slug: slugifyCategory(key), // important: slug should follow your existing slugifyCategory logic
             };
         })
-        .sort((a, b) => a.name.localeCompare(b.name));
+        .filter((c) => c.count > 0)
+        .sort((a, b) => a.title.localeCompare(b.title));
 
     return (
         <section className="py-16 bg-muted/30">
@@ -49,21 +66,28 @@ export default function CategoryGrid() {
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                    {categories.map((category) => (
+                    {categories.map((c) => (
                         <Link
-                            key={category.name}
-                            href={`/categories/${slugifyCategory(category.name)}`}
+                            key={c.key}
+                            href={`/categories/${c.slug}`}
+                            aria-label={`Browse ${c.title} AI tools`}
                             className="bg-card border border-border rounded-xl p-6 hover:shadow-lg hover:border-primary/50 transition-all group"
                         >
-                            <div className="text-4xl mb-3 group-hover:scale-110 transition-transform">
-                                {category.icon}
+                            <div className="flex items-start justify-between gap-3">
+                                <div className="text-4xl mb-3 group-hover:scale-110 transition-transform">
+                                    {c.icon}
+                                </div>
+
+                                <span className="text-xs rounded-full border border-border bg-muted px-2 py-1 text-muted-foreground">
+                                    {c.count}
+                                </span>
                             </div>
+
                             <h3 className="text-lg font-semibold mb-2 group-hover:text-primary transition-colors">
-                                {category.name}
+                                {c.title}
                             </h3>
-                            <p className="text-sm text-muted-foreground">
-                                {category.description}
-                            </p>
+
+                            <p className="text-sm text-muted-foreground">{c.description}</p>
                         </Link>
                     ))}
                 </div>
@@ -71,4 +95,3 @@ export default function CategoryGrid() {
         </section>
     );
 }
-

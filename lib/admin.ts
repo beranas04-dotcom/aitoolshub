@@ -1,16 +1,15 @@
-import { User } from '@/types';
+import type { User } from "@/types";
 
-const ADMIN_EMAILS = process.env.NEXT_PUBLIC_ADMIN_EMAILS?.split(',').map(e => e.trim()) || [];
+const raw = process.env.NEXT_PUBLIC_ADMIN_EMAILS || process.env.ADMIN_EMAILS || "";
+
+const ADMIN_EMAILS = raw
+    .split(",")
+    .map((e) => e.trim().toLowerCase())
+    .filter(Boolean);
 
 export function isAdmin(user: User | null): boolean {
-    if (!user || !user.email) return false;
-    return ADMIN_EMAILS.includes(user.email);
-}
-
-export function requireAdmin(user: User | null): void {
-    if (!isAdmin(user)) {
-        throw new Error('Unauthorized: Admin access required');
-    }
+    if (!user?.email) return false;
+    return ADMIN_EMAILS.includes(user.email.toLowerCase());
 }
 
 export function getAdminEmails(): string[] {

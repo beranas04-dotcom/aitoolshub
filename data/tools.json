@@ -11,6 +11,8 @@
     "pricing": "Paid, from $39/mo",
     "freeTrial": true,
     "logo": "/logos/jasper-ai.svg",
+    "lastUpdated": "2025-01-15",
+    "reviewedBy": "AIToolsHub Team",
     "features": [
       "Brand Voice & Style",
       "marketing Campaigns",
@@ -53,6 +55,8 @@
     "pricing": "Freemium, Paid from $12/mo",
     "freeTrial": true,
     "logo": "/logos/writesonic.svg",
+    "lastUpdated": "2025-01-15",
+    "reviewedBy": "AIToolsHub Team",
     "features": [
       "AI Article Writer 5.0",
       "SEO Optimization",
@@ -95,6 +99,8 @@
     "pricing": "Freemium, Pro $36/mo",
     "freeTrial": true,
     "logo": "/logos/copy-ai.svg",
+    "lastUpdated": "2025-01-15",
+    "reviewedBy": "AIToolsHub Team",
     "features": [
       "90+ Copywriting Tools",
       "Workflows Automation",
@@ -137,6 +143,8 @@
     "pricing": "Paid, from $89/mo",
     "freeTrial": false,
     "logo": "/logos/surfer-seo.svg",
+    "lastUpdated": "2025-01-15",
+    "reviewedBy": "AIToolsHub Team",
     "features": [
       "Content Editor",
       "SERP Analyzer",
@@ -179,6 +187,8 @@
     "pricing": "Subscription",
     "freeTrial": false,
     "logo": "/logos/midjourneyx.svg",
+    "lastUpdated": "2025-01-15",
+    "reviewedBy": "AIToolsHub Team",
     "features": [
       "High-detail renders",
       "Style presets",
@@ -224,6 +234,8 @@
     "pricing": "Credits-based",
     "freeTrial": true,
     "logo": "/logos/dalle3-proxy.svg",
+    "lastUpdated": "2025-01-15",
+    "reviewedBy": "AIToolsHub Team",
     "features": [
       "Inpainting",
       "Multiple aspect ratios",
@@ -246,6 +258,8 @@
     "pricing": "Freemium, Pro $14.99/mo",
     "freeTrial": true,
     "logo": "/logos/canva.svg",
+    "lastUpdated": "2025-01-15",
+    "reviewedBy": "AIToolsHub Team",
     "features": [
       "Magic Design",
       "Magic Media (Text-to-image)",
@@ -287,6 +301,8 @@
     "pricing": "Pro $25/mo",
     "freeTrial": true,
     "logo": "/logos/leonardo-ai.svg",
+    "lastUpdated": "2025-01-15",
+    "reviewedBy": "AIToolsHub Team",
     "features": [
       "Asset templates",
       "Batch style transfer",
@@ -312,6 +328,8 @@
     "pricing": "Freemium, Pro $49/mo",
     "freeTrial": true,
     "logo": "/logos/runwayml.svg",
+    "lastUpdated": "2025-01-15",
+    "reviewedBy": "AIToolsHub Team",
     "features": [
       "Background removal",
       "Gen-2 video",
@@ -337,6 +355,8 @@
     "pricing": "Subscription",
     "freeTrial": true,
     "logo": "/logos/pictory.svg",
+    "lastUpdated": "2025-01-15",
+    "reviewedBy": "AIToolsHub Team",
     "features": [
       "Script-to-video",
       "Auto captions",
@@ -361,6 +381,8 @@
     "pricing": "Per-video pricing",
     "freeTrial": false,
     "logo": "/logos/synthesia-lite.svg",
+    "lastUpdated": "2025-01-15",
+    "reviewedBy": "AIToolsHub Team",
     "features": [
       "AI presenters",
       "Multi-language",
@@ -384,7 +406,9 @@
     "affiliateUrl": "https://elevenlabs.io",
     "pricing": "Credits-based",
     "freeTrial": true,
-    "logo": "/logos/elevenvoice.svg",
+    "logo": "/logos/elevenlabs-voice.svg",
+    "lastUpdated": "2025-01-15",
+    "reviewedBy": "AIToolsHub Team",
     "features": [
       "High-quality TTS",
       "Voice cloning",
@@ -409,6 +433,8 @@
     "pricing": "Pro $19/mo",
     "freeTrial": true,
     "logo": "/logos/murf.svg",
+    "lastUpdated": "2025-01-15",
+    "reviewedBy": "AIToolsHub Team",
     "features": [
       "Voice library",
       "Studio editor",
@@ -433,6 +459,8 @@
     "pricing": "Subscription",
     "freeTrial": true,
     "logo": "/logos/playht.svg",
+    "lastUpdated": "2025-01-15",
+    "reviewedBy": "AIToolsHub Team",
     "features": [
       "Multiple voices",
       "SSML",
@@ -458,6 +486,8 @@
     "pricing": "Add-on $10/mo",
     "freeTrial": false,
     "logo": "/logos/notion-ai.svg",
+    "lastUpdated": "2025-01-15",
+    "reviewedBy": "AIToolsHub Team",
     "features": [
       "Q&A on your docs",
       "Auto-summaries",
@@ -497,6 +527,8 @@
     "pricing": "Freemium, Pro $12/mo",
     "freeTrial": true,
     "logo": "/logos/otterai.svg",
+    "lastUpdated": "2025-01-15",
+    "reviewedBy": "AIToolsHub Team",
     "features": [
       "Live transcription",
       "Speaker detection",
@@ -517,6 +549,8 @@
     "pricing": "Subscription",
     "freeTrial": true,
     "logo": "/logos/fireflies.svg",
+    "lastUpdated": "2025-01-15",
+    "reviewedBy": "AIToolsHub Team",
     "features": [
       "Meeting summaries",
       "Searchable audio",
@@ -537,6 +571,8 @@
     "pricing": "Freemium",
     "freeTrial": true,
     "logo": "/logos/replitai.svg",
+    "lastUpdated": "2025-01-15",
+    "reviewedBy": "AIToolsHub Team",
     "features": [
       "code autocompletion",
       "Live repls",
@@ -557,6 +593,8 @@
     "pricing": "Pro $29/mo",
     "freeTrial": true,
     "logo": "/logos/gitassist.svg",
+    "lastUpdated": "2025-01-15",
+    "reviewedBy": "AIToolsHub Team",
     "features": [
       "PR summary",
       "Semantic search",
@@ -577,6 +615,8 @@
     "pricing": "Freemium",
     "freeTrial": true,
     "logo": "/logos/perplexity-ai.svg",
+    "lastUpdated": "2025-01-15",
+    "reviewedBy": "AIToolsHub Team",
     "features": [
       "Source citations",
       "Smart search",
@@ -597,6 +637,8 @@
     "pricing": "Subscription",
     "freeTrial": false,
     "logo": "/logos/consensusai.svg",
+    "lastUpdated": "2025-01-15",
+    "reviewedBy": "AIToolsHub Team",
     "features": [
       "Paper mining",
       "Citation links",
@@ -617,6 +659,8 @@
     "pricing": "Pro $79/mo",
     "freeTrial": true,
     "logo": "/logos/marketmuse-lite.svg",
+    "lastUpdated": "2025-01-15",
+    "reviewedBy": "AIToolsHub Team",
     "features": [
       "Topic clusters",
       "Competitor gap analysis",
@@ -637,6 +681,8 @@
     "pricing": "Enterprise",
     "freeTrial": false,
     "logo": "/logos/phrasee.svg",
+    "lastUpdated": "2025-01-15",
+    "reviewedBy": "AIToolsHub Team",
     "features": [
       "A/B subject lines",
       "Tone tuning",
@@ -657,6 +703,8 @@
     "pricing": "Freemium",
     "freeTrial": true,
     "logo": "/logos/prompthub.svg",
+    "lastUpdated": "2025-01-15",
+    "reviewedBy": "AIToolsHub Team",
     "features": [
       "Prompt library",
       "User ratings",
@@ -677,6 +725,8 @@
     "pricing": "One-time packs",
     "freeTrial": false,
     "logo": "/logos/promptbase-lite.svg",
+    "lastUpdated": "2025-01-15",
+    "reviewedBy": "AIToolsHub Team",
     "features": [
       "Topic packs",
       "Copy-to-clipboard",
@@ -697,6 +747,8 @@
     "pricing": "Subscription",
     "freeTrial": true,
     "logo": "/logos/scribely.svg",
+    "lastUpdated": "2025-01-15",
+    "reviewedBy": "AIToolsHub Team",
     "features": [
       "Auto docs",
       "Version control",
@@ -717,6 +769,8 @@
     "pricing": "Freemium",
     "freeTrial": true,
     "logo": "/logos/synthdocs.svg",
+    "lastUpdated": "2025-01-15",
+    "reviewedBy": "AIToolsHub Team",
     "features": [
       "code scanning",
       "Markdown export",
@@ -737,6 +791,8 @@
     "pricing": "Credits-based",
     "freeTrial": false,
     "logo": "/logos/imageopt.svg",
+    "lastUpdated": "2025-01-15",
+    "reviewedBy": "AIToolsHub Team",
     "features": [
       "Lossless upscaling",
       "Compression presets",
@@ -757,6 +813,8 @@
     "pricing": "Subscription",
     "freeTrial": true,
     "logo": "/logos/vidopt.svg",
+    "lastUpdated": "2025-01-15",
+    "reviewedBy": "AIToolsHub Team",
     "features": [
       "Auto trim",
       "Quality-preserving compression",

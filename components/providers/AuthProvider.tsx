@@ -1,10 +1,10 @@
-'use client';
+"use client";
 
-import { createContext, useContext, useEffect, useState } from 'react';
-import { User as FirebaseUser, onAuthStateChanged } from 'firebase/auth';
-import { auth } from '@/lib/firebase';
-import { User } from '@/types';
-import { isAdmin } from '@/lib/admin';
+import { createContext, useContext, useEffect, useState } from "react";
+import { User as FirebaseUser, onAuthStateChanged } from "firebase/auth";
+import { auth } from "@/lib/firebase";
+import { User } from "@/types";
+import { isAdmin } from "@/lib/admin";
 
 interface AuthContextType {
     user: User | null;
@@ -21,20 +21,18 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (firebaseUser: FirebaseUser | null) => {
             if (firebaseUser) {
-                const appUser: User = {
+                const baseUser: User = {
                     uid: firebaseUser.uid,
                     email: firebaseUser.email,
                     displayName: firebaseUser.displayName,
                     photoURL: firebaseUser.photoURL,
-                    isAdmin: isAdmin({
-                        uid: firebaseUser.uid,
-                        email: firebaseUser.email,
-                        displayName: firebaseUser.displayName,
-                        photoURL: firebaseUser.photoURL,
-                        isAdmin: false,
-                    }),
+                    isAdmin: false,
                 };
-                setUser(appUser);
+
+                setUser({
+                    ...baseUser,
+                    isAdmin: isAdmin(baseUser),
+                });
             } else {
                 setUser(null);
             }
@@ -58,8 +56,6 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
 export function useAuth() {
     const context = useContext(AuthContext);
-    if (context === undefined) {
-        throw new Error('useAuth must be used within an AuthProvider');
-    }
+    if (!context) throw new Error("useAuth must be used within an AuthProvider");
     return context;
 }

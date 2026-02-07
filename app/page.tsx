@@ -1,20 +1,31 @@
-import Link from 'next/link';
-import tools from '@/data/tools.json';
-import ToolCard from '@/components/tools/ToolCard';
-import Hero from '@/components/home/Hero';
-import CategoryGrid from '@/components/home/CategoryGrid';
-import FeaturedTools from '@/components/home/FeaturedTools';
-import Stats from '@/components/home/Stats';
-import CTA from '@/components/home/CTA';
-
-import NewsletterForm from '@/components/newsletter/NewsletterForm';
+import Link from "next/link";
+import tools from "@/data/tools.json";
+import ToolCard from "@/components/tools/ToolCard";
+import Hero from "@/components/home/Hero";
+import CategoryGrid from "@/components/home/CategoryGrid";
+import FeaturedTools from "@/components/home/FeaturedTools";
+import Stats from "@/components/home/Stats";
+import CTA from "@/components/home/CTA";
+import NewsletterForm from "@/components/newsletter/NewsletterForm";
+import { getFeaturedTools } from "@/lib/getFeaturedTools";
 
 export const revalidate = 3600; // Revalidate every hour
 
 export default async function HomePage() {
     // In production, this would fetch from Firestore
-    // For now, we'll use seed data
-    const allTools = tools;
+    const allTools = tools as any[];
+
+    // ✅ Real featured tools (uses your featured:true)
+    const featuredTools = await getFeaturedTools(6);
+
+    // ✅ Latest tools by lastUpdated (fallback if missing)
+    const latestTools = [...allTools]
+        .sort((a, b) => {
+            const ad = a.lastUpdated ? Date.parse(a.lastUpdated) : 0;
+            const bd = b.lastUpdated ? Date.parse(b.lastUpdated) : 0;
+            return bd - ad;
+        })
+        .slice(0, 6);
 
     return (
         <div className="flex flex-col">
@@ -28,9 +39,9 @@ export default async function HomePage() {
             <CategoryGrid />
 
             {/* Featured Tools */}
-            <FeaturedTools tools={allTools.slice(0, 6)} />
+            <FeaturedTools tools={featuredTools as any} />
 
-            {/* All Tools Grid */}
+            {/* Latest Tools Grid */}
             <section className="py-16 bg-background">
                 <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                     <div className="flex items-center justify-between mb-8">
@@ -51,7 +62,7 @@ export default async function HomePage() {
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        {allTools.slice(0, 6).map((tool) => (
+                        {latestTools.map((tool) => (
                             <ToolCard key={tool.id} tool={tool} />
                         ))}
                     </div>
@@ -74,33 +85,58 @@ export default async function HomePage() {
                             Start with the Best
                         </h2>
                         <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                            Not sure where to look? Check out our curated lists for specific use cases.
+                            Not sure where to look? Check out our curated lists for specific
+                            use cases.
                         </p>
                     </div>
 
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                        <Link href="/best/ai-tools-for-teachers" className="bg-background p-4 rounded-lg border border-border hover:border-primary hover:shadow-md transition text-center font-medium">
+                        <Link
+                            href="/best/ai-tools-for-teachers"
+                            className="bg-background p-4 rounded-lg border border-border hover:border-primary hover:shadow-md transition text-center font-medium"
+                        >
                             For Teachers
                         </Link>
-                        <Link href="/best/ai-tools-for-youtube-creators" className="bg-background p-4 rounded-lg border border-border hover:border-primary hover:shadow-md transition text-center font-medium">
+                        <Link
+                            href="/best/ai-tools-for-youtube-creators"
+                            className="bg-background p-4 rounded-lg border border-border hover:border-primary hover:shadow-md transition text-center font-medium"
+                        >
                             For YouTubers
                         </Link>
-                        <Link href="/best/ai-tools-for-social-media-management" className="bg-background p-4 rounded-lg border border-border hover:border-primary hover:shadow-md transition text-center font-medium">
+                        <Link
+                            href="/best/ai-tools-for-social-media-management"
+                            className="bg-background p-4 rounded-lg border border-border hover:border-primary hover:shadow-md transition text-center font-medium"
+                        >
                             Social Media
                         </Link>
-                        <Link href="/best/ai-tools-for-graphic-design" className="bg-background p-4 rounded-lg border border-border hover:border-primary hover:shadow-md transition text-center font-medium">
+                        <Link
+                            href="/best/ai-tools-for-graphic-design"
+                            className="bg-background p-4 rounded-lg border border-border hover:border-primary hover:shadow-md transition text-center font-medium"
+                        >
                             Graphic Design
                         </Link>
-                        <Link href="/best/ai-tools-for-copywriting" className="bg-background p-4 rounded-lg border border-border hover:border-primary hover:shadow-md transition text-center font-medium">
+                        <Link
+                            href="/best/ai-tools-for-copywriting"
+                            className="bg-background p-4 rounded-lg border border-border hover:border-primary hover:shadow-md transition text-center font-medium"
+                        >
                             Copywriting
                         </Link>
-                        <Link href="/best/ai-tools-for-real-estate" className="bg-background p-4 rounded-lg border border-border hover:border-primary hover:shadow-md transition text-center font-medium">
+                        <Link
+                            href="/best/ai-tools-for-real-estate"
+                            className="bg-background p-4 rounded-lg border border-border hover:border-primary hover:shadow-md transition text-center font-medium"
+                        >
                             Real Estate
                         </Link>
-                        <Link href="/best/ai-tools-for-hr-and-recruiting" className="bg-background p-4 rounded-lg border border-border hover:border-primary hover:shadow-md transition text-center font-medium">
+                        <Link
+                            href="/best/ai-tools-for-hr-and-recruiting"
+                            className="bg-background p-4 rounded-lg border border-border hover:border-primary hover:shadow-md transition text-center font-medium"
+                        >
                             HR & Recruiting
                         </Link>
-                        <Link href="/best" className="bg-primary/5 p-4 rounded-lg border border-primary/20 hover:bg-primary/10 transition text-center font-medium text-primary">
+                        <Link
+                            href="/best"
+                            className="bg-primary/5 p-4 rounded-lg border border-primary/20 hover:bg-primary/10 transition text-center font-medium text-primary"
+                        >
                             View All Lists →
                         </Link>
                     </div>
